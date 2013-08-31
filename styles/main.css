@@ -1,0 +1,222 @@
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,
+form,fieldset,textarea,p,blockquote,th,td,table,tr {
+  font-family: "微软雅黑";
+word-break:break-all;
+padding: 0;
+margin: 0;
+border:0;
+font-size: 12px;
+}
+textarea{
+	resize:none;
+	border: 1px solid #0087b6; 
+}
+ul,li,a{
+	list-style: none;
+	text-decoration: none;
+}
+#wrapper{
+	width: 1056px;
+	margin: auto;
+}
+#head{
+	width: 1056px;
+	height: 130px;
+	background: url(../img/banner_bac.jpg);
+}
+#s-wrapper{
+	margin: auto;
+	width:710px;
+}
+#s-main{
+	width: 710px;
+	height: 417px;
+	margin-top:100px;
+	background: url(../img/bac.jpg);
+	overflow: auto;
+}
+#s-main form{
+	margin:210px 0px 0px 420px;
+}
+#s-main label{
+	display: inline-block;
+	width:100px;
+	text-align: right;
+	vertical-align: middle;
+}
+#username,#password,#factory,#check{
+	margin-top: 10px;
+}
+#username input,#password input,#factory input{
+	width:150px;
+	vertical-align: middle;
+}
+#check input{
+	width:70px;
+	vertical-align: middle;
+}
+#check-img{
+	margin-left: 10px;
+	width:70px;
+	height: 22px;
+	display: inline-block;
+	zoom:1;
+	background-color: #000;
+	vertical-align: middle;
+}
+#submit
+{
+	margin-left: 200px;
+	margin-top: 10px;
+}
+#user-massage{
+	background-color:#eee;
+	padding-left: 10px;
+	font-size: 14px;
+	font-weight: bold;
+}
+#leftside{
+	background-color: #0087b6;
+	width:200px;
+	height:600px;
+	float: left;
+
+}
+#leftside ul{
+	padding-top: 10px;
+}
+#leftside a{
+	color: white;
+	border-bottom: 2px solid white;
+	padding:10px 0px 0px 0px;
+	display: block;
+	text-align: center;
+	width:200px;
+	height:30px;
+	font-size: 14px;
+	font-weight: bold;
+}
+#rightside{
+	float: left;
+	width:856px;
+	height:600px;
+	background-color: #e8f6f9;
+	border-top: 2px solid #0087b6;
+}
+#intro{
+	background: url(../img/women.png);
+	width: 660px;
+	height: 323px;
+	margin:50px 0px 0px 100px;
+	padding:20px 0px 0px 40px;
+}
+#intro p{
+	margin-top: 8px;
+}
+#intro span{
+	margin-left: 5px;
+	color: #418830;
+}
+#next{
+	background-color: white;
+	padding:0px 0px 10px 60px 
+}
+#next a{
+	color: #0087b6;
+	padding:5px 0px 0px 0px;
+	display: block;
+	text-align: center;
+	width:100px;
+	height:20px;
+	font-size: 12px;
+
+}
+.title-intro{
+	padding-left: 30px;
+	font-size: 15px;
+	margin-left: 20px;
+	background: url(../img/tribox.jpg) no-repeat top left;
+	background-position: -1px -1px;
+	margin-top: 10px;
+	font-weight: bold;
+	padding-bottom: 10px;
+	border-bottom: 2px solid #0087b6;
+	width: 790px;
+
+}
+.title{
+	margin-left: 260px;
+	font-size: 12px;
+	font-weight: normal;
+	
+}
+.number{
+	margin-left: 5px;
+	color: #fa9543;
+}
+#main table{
+	border:1px solid #0087b6; 
+	text-align: center;
+	width: 800px;
+}
+#rightside form{
+	margin: 20px 0px 0px 30px;
+}
+form textarea{
+	width:600px;
+	height:80px;
+}
+tr,td{
+	border: 1px solid #0087b6; 
+}
+td{
+	padding:10px;
+}
+.send{
+	margin-left:730px;
+	margin-top: 10px;
+}
+.blue{
+	background-color: rgb(172, 231, 243);
+}
+.border{
+	border: 1px solid #0087b6; 
+	text-align: center;
+	width: 800px;
+	height:23px;
+
+
+}
+.hold
+{
+		margin-left: 30px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.input-length{
+	width: 600px;
+}
+.input-length1{
+	width: 550px;
+}
+.button-s{
+	padding:1px 10px 1px 10px;
+	border:  1px solid #0087b6;
+	margin-top: 1px;
+	display: inline-block;
+
+}
+.result{
+	display: inline-block;
+	margin-right: 100px;
+}
+.white{
+	background-color:rgb(172, 231, 243);
+	color:#09C;
+}
+.select1{
+	width:100px;
+}
+.red{
+	color:red;
+}
