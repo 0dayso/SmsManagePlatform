@@ -31,6 +31,21 @@ class Factory_model extends CI_Model
     public function addFactory($data)
     {
         $this->db->insert('factory', $data);
+        $fid = $this->db->insert_id();
+        $this->db->insert('fee', array(
+            array(
+                'fid'=>$fid,
+                'type'=>1
+            ),
+            array(
+                'fid'=>$fid,
+                'type'=>2
+            ),
+            array(
+                'fid'=>$fid,
+                'type'=>3
+            )
+        ));
         if($this->db->affected_rows())
             return TRUE;
         else

@@ -1,17 +1,17 @@
 <div id="main">
     <div id="leftside">
         <ul>
-            <li><a href="<?= base_url('user/generalsms') ?>">短信发送</a></li>
-            <li><a href="<?= base_url('user/smsbox') ?>">收件箱</a></li>
-            <li><a href="<?= base_url('user/sendbox') ?>">发件箱</a></li>
-            <li><a href="<?= base_url('user/addcontact') ?>">联系人</a></li>
-            <li><a href="<?= base_url('user/addphrase') ?>">短信短语</a></li>
-            <li><a href="<?= base_url('admin/manage') ?>">用户管理</a></li>
+            <li><a href="<?=base_url('user/generalsms')?>">短信发送</a></li>
+            <li><a href="<?=base_url('user/smsbox')?>">收件箱</a></li>
+            <li><a href="<?=base_url('user/sendbox')?>">发件箱</a></li>
+            <li><a href="<?=base_url('user/addcontact')?>">联系人</a></li>
+            <li><a href="<?=base_url('user/addphrase')?>">短信短语</a></li>
+            <li><a href="<?=base_url('admin/manage')?>">用户管理</a></li>
             <ul id="next">
-                <li><a href="<?= base_url('admin/manage') ?>">企业管理</a></li>
-                <li><a href="<?= base_url('admin/usermanage') ?>">用户管理</a></li>
-                <li><a href="<?= base_url('admin/operatehistory') ?>">操作记录查询</a></li>
-                <li><a href="<?= base_url('admin/charge') ?>">账号充值</a></li>
+                <li><a href="<?=base_url('admin/manage')?>">企业管理</a></li>
+                <li><a href="<?=base_url('admin/usermanage')?>">用户管理</a></li>
+                <li><a href="<?=base_url('admin/operatehistory')?>">操作记录查询</a></li>
+                <li><a href="<?=base_url('admin/charge')?>">账号充值</a></li>
 
             </ul>
         </ul>

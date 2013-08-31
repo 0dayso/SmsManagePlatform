@@ -40,4 +40,29 @@ class User_model extends CI_Model
         else
             return FALSE;
     }
+
+    public function selectUser($usrname = null, $fid = null)
+    {
+        if($usrname)
+            $this->db->where('usrname', $usrname);
+        if($fid)
+            $this->db->where('fid', $fid);
+        $query = $this->db->get('user');
+        if($query->num_rows())
+        {
+            $result = $query->result_array();
+            return $result;
+        }
+        else
+            return FALSE;
+    }
+
+    public function addUser($data)
+    {
+        $this->db->insert('user', $data);
+        if($this->db->affected_rows())
+            return TRUE;
+        else
+            return FALSE;
+    }
 }
