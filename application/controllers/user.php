@@ -20,8 +20,11 @@ class User extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        if ($this->session->userdata('is_login') != 1 || $this->session->userdata('usertype') ==1)
+        if ($this->session->userdata('is_login') != 1)
             redirect();
+        if ($this->session->userdata('usertype') ==1)
+            redirect(base_url('check'));
+
         $this->load->model('user_model');
         $this->load->model('fee_model');
         $this->load->model('contact_model');

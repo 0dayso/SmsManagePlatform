@@ -53,4 +53,79 @@ class Sms_model extends CI_Model
         else
             return FALSE;
     }
+
+    public function getUnchecksms($data)
+    {
+        $query = $this->db->get_where('mtcontent', array(
+            'flag'=>1
+        ));
+        $returndata = array();
+        $result = $query->result_array();
+        foreach($result as $item)
+        {
+            $this->db->select('*');
+            $this->db->from('smsmt');
+            $this->db->where('csid = '.$item['csid']);
+            if(array_key_exists('startime', $data))
+                $this->db->where('addtime >=', $data['startime']);
+            if(array_key_exists('endtime', $data))
+                $this->db->where('addtime <=', $data['endtime']);
+            if(array_key_exists('gatetype', $data))
+                $this->db->where('type', $data['gatetype']);
+            $query = $this->db->get();
+            $query = $query->result_array();
+            $uid = $query[0]['uid'];
+            $mobilenum = 0;
+            $unicomnum = 0;
+            $telecomnum = 0;
+            foreach($query as $tmp){
+                switch($tmp['type']){
+                    case 1:
+                        ++$mobilenum;
+                        break;
+                    case 2:
+                        ++$unicomnum;
+                        break;
+                    case 3:
+                        ++$telecomnum;
+                        break;
+                }
+            }
+            $query = $this->db->get_where('user', array(
+                'uid'=>$uid
+            ));
+            $query = $query->row_array();
+            $fid = $query['fid'];
+            $query = $this->db->get_where('factory', array(
+                'fid'=>$fid
+            ));
+            $query = $query->row_array();
+            $fname = $query['fname'];
+            if($mobilenum)
+                array_push($returndata, array(
+                    'fname'=>$fname,
+                    'content'=>$item['content'],
+                    'num'=>$mobilenum,
+                    'gatetype'=>'移动',
+                    'addtime'=>$item['addtime']
+                ));
+            if($unicomnum)
+                array_push($returndata, array(
+                    'fname'=>$fname,
+                    'content'=>$item['content'],
+                    'num'=>$unicomnum,
+                    'gatetype'=>'联通',
+                    'addtime'=>$item['addtime']
+                ));
+            if($telecomnum)
+                array_push($returndata, array(
+                    'fname'=>$fname,
+                    'content'=>$item['content'],
+                    'num'=>$telecomnum,
+                    'gatetype'=>'电信',
+                    'addtime'=>$item['addtime']
+                ));
+        }
+        return $returndata;
+    }
 }

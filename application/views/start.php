@@ -3,6 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <link href="<?=base_url('styles/main.css')?>" type="text/css" rel="stylesheet"/>
+    <title>恒洲信通短信平台</title>
 </head>
 <body>
 <div id="s-wrapper">
