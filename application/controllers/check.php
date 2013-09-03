@@ -40,22 +40,31 @@ class Check extends CI_Controller
     }
 
 
-    public function intercept($type = null)
+    public function intercept($type = null, $page = 0)
     {
         $data = $this->input->post();
         if (!$data) {
+            $data['page'] = $page;
             $this->load->view('user/header', $this->data);
-            $this->load->view('check/intercept');
+            $this->load->view('check/intercept',$data);
         } else {
             switch($type){
                 case 'select':
                     $data = array_filter($data);
-                    $result = $this->sms_model->getUnchecksms($data);
+                    $result = $this->sms_model->getUnchecksms($data, $page);
                     $result['unchecksms'] = $result;
+                    $result['page'] = $page;
                     $this->load->view('user/header', $this->data);
                     $this->load->view('check/intercept', $result);
                     break;
                 case 'accept':
+                    $data = array_filter($data);
+                    foreach($data['checkbox'] as $item)
+                    {
+                        $this->sms_model->acceptSMS($item, 1);
+                    }
+                    $this->session->set_flashdata('err', '审核通过');
+                    redirect(base_url('check/intercept'));
                     break;
                 case 'reject':
                     break;

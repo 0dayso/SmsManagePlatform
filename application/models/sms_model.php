@@ -33,7 +33,7 @@ class Sms_model extends CI_Model
         return $this->db->insert_id();
     }
 
-    public function getHistorysms($uid, $data)
+    public function getHistorysms($uid, $data, $page)
     {
         $this->db->select('*');
         $this->db->from('smsmt, mtcontent');
@@ -47,6 +47,7 @@ class Sms_model extends CI_Model
             $this->db->where('smsmt.snumber', $data['clientnumber']);
         if(array_key_exists('flag', $data))
             $this->db->where('smsmt.flag', $data['flag']);
+        $this->db->limit(2, $page * 2);
         $query = $this->db->get();
         if($query->num_rows())
             return $query->result_array();
@@ -54,24 +55,26 @@ class Sms_model extends CI_Model
             return FALSE;
     }
 
-    public function getUnchecksms($data)
+    public function getUnchecksms($data, $page)
     {
         $query = $this->db->get_where('mtcontent', array(
-            'flag'=>1
+            'flag'=>0
         ));
         $returndata = array();
         $result = $query->result_array();
         foreach($result as $item)
         {
+            $csid = $item['csid'];
             $this->db->select('*');
             $this->db->from('smsmt');
-            $this->db->where('csid = '.$item['csid']);
+            $this->db->where('csid = '.$csid);
             if(array_key_exists('startime', $data))
                 $this->db->where('addtime >=', $data['startime']);
             if(array_key_exists('endtime', $data))
                 $this->db->where('addtime <=', $data['endtime']);
             if(array_key_exists('gatetype', $data))
                 $this->db->where('type', $data['gatetype']);
+            $this->db->limit(3, $page * 3);
             $query = $this->db->get();
             $query = $query->result_array();
             $uid = $query[0]['uid'];
@@ -103,6 +106,7 @@ class Sms_model extends CI_Model
             $fname = $query['fname'];
             if($mobilenum)
                 array_push($returndata, array(
+                    'csid'=>$csid,
                     'fname'=>$fname,
                     'content'=>$item['content'],
                     'num'=>$mobilenum,
@@ -111,6 +115,7 @@ class Sms_model extends CI_Model
                 ));
             if($unicomnum)
                 array_push($returndata, array(
+                    'csid'=>$csid,
                     'fname'=>$fname,
                     'content'=>$item['content'],
                     'num'=>$unicomnum,
@@ -119,6 +124,7 @@ class Sms_model extends CI_Model
                 ));
             if($telecomnum)
                 array_push($returndata, array(
+                    'csid'=>$csid,
                     'fname'=>$fname,
                     'content'=>$item['content'],
                     'num'=>$telecomnum,
@@ -127,5 +133,17 @@ class Sms_model extends CI_Model
                 ));
         }
         return $returndata;
+    }
+
+    public function acceptSMS($csid, $flag)
+    {
+        $this->db->where('csid', $csid);
+        $this->db->update('mtcontent', array(
+            'flag'=>$flag
+        ));
+        $this->db->update('smsmt', array(
+            'flag'=>$flag
+        ));
+        return TRUE;
     }
 }

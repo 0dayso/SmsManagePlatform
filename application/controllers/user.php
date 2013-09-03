@@ -132,9 +132,10 @@ class User extends CI_Controller
         }
     }
 
-    public function sendbox($type = null)
+    public function sendbox($type = null, $page = 0)
     {
         $data = $this->input->post();
+        $this->data['page'] = $page;
         if (!$data) {
             $this->load->view('user/header', $this->data);
             $this->load->view('user/sendbox', $this->data);
@@ -143,9 +144,10 @@ class User extends CI_Controller
             switch($type){
                 case 'select':
                     $data = array_filter($data);
-                    $result = $this->sms_model->getHistorysms($this->uid, $data);
+                    $result = $this->sms_model->getHistorysms($this->uid, $data, $page);
                     if($result){
                         $result['result'] = $result;
+                        $result['page'] = $page;
                         $this->load->view('user/header', $this->data);
                         $this->load->view('user/sendbox', $result);
                     }else{

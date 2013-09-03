@@ -4,7 +4,7 @@
             <li><a href="#">用户管理</a></li>
 
             <ul id="next">
-                <li><a href="<?= base_url('check/intercept') ?>">短信拦截</a></li>
+                <li><a href="<?= base_url('check/intercept') ?>">短信审核</a></li>
                 <li><a href="<?= base_url('check/uniquesms') ?>">唯一信息调取</a></li>
                 <li><a href="<?= base_url('check/fishsms/') ?>">钓鱼信息查询</a></li>
                 <li><a href="<?= base_url('check/output') ?>">待审核信息导出</a></li>
@@ -70,7 +70,6 @@
                     <td colspan="5"><textarea name="" id="" cols="30" rows="10"></textarea>
 
                         <p>最多为140字，已输入<span class="number">0</span>字。<span class="red">注意：审核通过时，才会替换勾选的短信内容</span></p>
-                        ;
                     </td>
                 </tr>
                 <tr>
@@ -78,10 +77,12 @@
                 </tr>
                 <tr>
                     <td colspan="6"><span class="result">查询结果：共<span>0</span>条记录，当前<span>0/0</span>页</span>
-                        <a href="#" class="button-s">首页</a>
-                        <a href="#" class="button-s">上一页</a>
-                        <a href="#" class="button-s">下一页</a>
-                        <a href="#" class="button-s">尾页</a></td>
+                        <button type="button" value="<?=base_url('check/intercept/select/0')?>" class="button-s">首页</button>
+                        <?php if($page != 0):?>
+                            <button type="button" value="<?=base_url('check/intercept/select/'.($page-1))?>" class="button-s">上一页</button>
+                        <?php endif ?>
+                        <button type="button" value="<?=base_url('check/intercept/select/'.($page+1))?>" class="button-s">下一页</button>
+                        <button type="button" value="<?=base_url('check/intercept/select/0')?>" class="button-s">尾页</button>
                 </tr>
                 <tr>
                     <td width="77" class="blue"><input type="checkbox" name="checkbox" id="checkbox">
@@ -96,7 +97,7 @@
                     <?php foreach($unchecksms as $item):?>
                         <tr>
                             <td width="77">
-                                <input type="checkbox" name="checkbox" id="checkbox">
+                                <input type="checkbox" name="checkbox[]" id="checkbox" value="<?=$item['csid']?>">
                             </td>
                             <td width="137"><?=$item['fname']?></td>
                             <td width="124"><?=$item['gatetype']?></td>
@@ -121,6 +122,7 @@
             $("form").attr('action', $(this).val());
             $("form").submit();
         })
+
     })
 </script>
 </body>
