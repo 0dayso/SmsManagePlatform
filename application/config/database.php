@@ -50,7 +50,7 @@ $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
 $db['default']['username'] = 'sms';
-$db['default']['password'] = '123456';
+$db['default']['password'] = 'sms';
 $db['default']['database'] = 'sms';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
