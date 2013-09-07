@@ -17,7 +17,7 @@ class Check extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        if ($this->session->userdata('is_login') != 1 || $this->session->userdata('usertype') !=1)
+        if ($this->session->userdata('is_login') != 1 || $this->session->userdata('usertype') != 1)
             redirect();
 
         $this->load->model('factory_model');
@@ -46,10 +46,11 @@ class Check extends CI_Controller
         if (!$data) {
             $data['page'] = $page;
             $this->load->view('user/header', $this->data);
-            $this->load->view('check/intercept',$data);
+            $this->load->view('check/intercept', $data);
         } else {
-            switch($type){
+            switch ($type) {
                 case 'select':
+                    $this->session->set_flashdata($data);
                     $data = array_filter($data);
                     $result = $this->sms_model->getUnchecksms($data, $page);
                     $result['unchecksms'] = $result;
@@ -59,8 +60,7 @@ class Check extends CI_Controller
                     break;
                 case 'accept':
                     $data = array_filter($data);
-                    foreach($data['checkbox'] as $item)
-                    {
+                    foreach ($data['checkbox'] as $item) {
                         $this->sms_model->acceptSMS($item, 1);
                     }
                     $this->session->set_flashdata('err', '审核通过');
@@ -69,6 +69,76 @@ class Check extends CI_Controller
                 case 'reject':
                     break;
             }
+        }
+    }
+
+    public function uniquesms($page = 0)
+    {
+        $data = $this->input->post();
+        if (!$data) {
+            $data['page'] = $page;
+            $this->load->view('user/header', $this->data);
+            $this->load->view('check/uniquesms', $data);
+        } else {
+            $this->session->set_flashdata($data);
+            $data = array_filter($data);
+            $result = $this->sms_model->getUnchecksms($data, $page, TRUE);
+            $result['uniquesms'] = $result;
+            $result['page'] = $page;
+            $this->load->view('user/header', $this->data);
+            $this->load->view('check/uniquesms', $result);
+        }
+    }
+
+    public function fishsms($page = 0)
+    {
+        $data = $this->input->post();
+        if (!$data) {
+            $data['page'] = $page;
+            $this->load->view('user/header', $this->data);
+            $this->load->view('check/fishsms', $data);
+        } else {
+            $this->session->set_flashdata($data);
+            $data = array_filter($data);
+            $result = $this->sms_model->getFishsms($data, $page);
+            $result['fishsms'] = $result;
+            $result['page'] = $page;
+            $this->load->view('user/header', $this->data);
+            $this->load->view('check/fishsms', $result);
+        }
+    }
+
+    public function output($page = 0, $csid = null, $gatetype = null)
+    {
+        $data = $this->input->post();
+        if (!$data) {
+            if(!$csid || !$gatetype){
+                $data['page'] = $page;
+                $this->load->view('user/header', $this->data);
+                $this->load->view('check/output', $data);
+            }
+            else{
+                $result = $this->sms_model->getOutput($csid, $gatetype);
+                if($result){
+                    $tmp = '';
+                    foreach($result as $item){
+                        $tmp = $tmp.$item['snumber'];
+                    }
+                    $this->output->set_content_type('text/csv')->set_output($tmp);
+                }
+                else{
+                    $this->session->set_flashdata('err', '非法操作');
+                    redirect(base_url('check/output'));
+                }
+            }
+        } else {
+            $this->session->set_flashdata($data);
+            $data = array_filter($data);
+            $result = $this->sms_model->getUnchecksms($data, $page);
+            $result['output'] = $result;
+            $result['page'] = $page;
+            $this->load->view('user/header', $this->data);
+            $this->load->view('check/output', $result);
         }
     }
 }

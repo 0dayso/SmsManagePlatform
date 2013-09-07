@@ -25,15 +25,15 @@
                 </tr>
                 <tr>
                     <td class="blue">起始时间</td>
-                    <td><input type="text" name="startime" id="textfield"></td>
+                    <td><input type="text" name="startime" id="start-date" class="date-pick dp-applied" value="<?=$this->session->flashdata('startime')?>"/></td>
                     <td class="blue">截止时间</td>
-                    <td><input type="text" name="endtime" id="textfield2"></td>
+                    <td><input type="text" name="endtime" id="end-date" class="date-pick dp-applied" value="<?=$this->session->flashdata('endtime')?>"/></td>
                 </tr>
                 <tr>
                     <td class="blue">选择主叫号码</td>
                     <td><input type="text" name="hostname" id="textfield3"></td>
                     <td class="blue">选择被叫号码</td>
-                    <td><input type="text" name="clientnumber" id="textfield4"></td>
+                    <td><input type="text" name="clientnumber" id="textfield4" value="<?=$this->session->flashdata('clientnumber')?>"></td>
                 </tr>
                 <tr>
                     <td width="117" class="blue">选择查询类型</td>
@@ -50,11 +50,9 @@
                 </tr>
                 <tr>
                     <td colspan="4">
-                        <button type="button" class="button-s" value="<?= base_url('user/sendbox/select') ?>">查询
-                        </button>
+                        <button type="button" class="button-s" value="<?= base_url('user/sendbox/select') ?>">查询</button>
                         <button type="button" class="button-s" value="<?= base_url('user/sendbox/ouput') ?>">导出</button>
-                        <button type="button" class="button-s" value="<?= base_url('user/sendbox/resend') ?>">重发
-                        </button>
+                        <button type="button" class="button-s" value="<?= base_url('user/sendbox/resend') ?>">重发</button>
                     </td>
                 </tr>
             </table>
@@ -110,12 +108,41 @@
     </div>
 </div>
 </div>
+<script type="text/javascript" src="<?=base_url('js/jquery.datePicker.js')?>"></script>
 <script type="text/javascript">
     $(function () {
         $('.button-s').click(function () {
             $("form").attr('action', $(this).val());
             $("form").submit();
         })
+        Date.format = 'yyyy-mm-dd'
+        $('.date-pick').datePicker({
+            clickInput:true,
+            createButton:false,
+            startDate:'2013-01-01'
+        });
+        $('#start-date').bind(
+            'dpClosed',
+            function(e, selectedDates)
+            {
+                var d = selectedDates[0];
+                if (d) {
+                    d = new Date(d);
+                    $('#end-date').dpSetStartDate(d.addDays(1).asString());
+                }
+            }
+        );
+        $('#end-date').bind(
+            'dpClosed',
+            function(e, selectedDates)
+            {
+                var d = selectedDates[0];
+                if (d) {
+                    d = new Date(d);
+                    $('#start-date').dpSetStartDate(d.addDays(-1).asString());
+                }
+            }
+        );
     })
 </script>
 </body>

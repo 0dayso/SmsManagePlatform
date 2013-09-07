@@ -21,11 +21,11 @@
                 <tr>
                     <td width="143" class="blue">开始时间</td>
                     <td width="220">
-                        <input type="text" name="startime" id="textfield">
+                        <input type="text" name="startime" id="start-date" class="date-pick dp-applied" value="<?=$this->session->flashdata('startime')?>"/>
                     </td>
                     <td width="189" class="blue">结束时间</td>
                     <td width="228">
-                        <input type="text" name="endtime" id="textfield2">
+                        <input type="text" name="endtime" id="end-date" class="date-pick dp-applied" value="<?=$this->session->flashdata('endtime')?>"/>
                     </td>
                 </tr>
                 <tr>
@@ -42,11 +42,11 @@
                 <tr>
                     <td class="blue">企业名称</td>
                     <td>
-                        <input type="text" name="fname" id="textfield3">
+                        <input type="text" name="fname" id="textfield3" value="<?=$this->session->flashdata('fname')?>"/>
                     </td>
                     <td class="blue">短信内容</td>
                     <td><label for="textfield4"></label>
-                        <input type="text" name="smscontent" id="textfield4">
+                        <input type="text" name="smscontent" id="textfield4" value="<?=$this->session->flashdata('content')?>"/>
                     </td>
                 </tr>
                 <tr>
@@ -85,7 +85,7 @@
                         <button type="button" value="<?=base_url('check/intercept/select/0')?>" class="button-s">尾页</button>
                 </tr>
                 <tr>
-                    <td width="77" class="blue"><input type="checkbox" name="checkbox" id="checkbox">
+                    <td width="77" class="blue"><input type="checkbox" name="checkbox" id="checkAll">
                         <label for="checkbox">全选</label></td>
                     <td width="137" class="blue">企业名称</td>
                     <td width="124" class="blue">网关类型</td>
@@ -116,13 +116,48 @@
     </div>
 </div>
 </div>
+<script type="text/javascript" src="<?=base_url('js/jquery.datePicker.js')?>"></script>
 <script type="text/javascript">
     $(function(){
         $('button.button-s').click(function(){
             $("form").attr('action', $(this).val());
             $("form").submit();
         })
-
+        Date.format = 'yyyy-mm-dd'
+        $('.date-pick').datePicker({
+            clickInput:true,
+            createButton:false,
+            startDate:'2013-01-01'
+        });
+        $('#start-date').bind(
+            'dpClosed',
+            function(e, selectedDates)
+            {
+                var d = selectedDates[0];
+                if (d) {
+                    d = new Date(d);
+                    $('#end-date').dpSetStartDate(d.addDays(1).asString());
+                }
+            }
+        );
+        $('#end-date').bind(
+            'dpClosed',
+            function(e, selectedDates)
+            {
+                var d = selectedDates[0];
+                if (d) {
+                    d = new Date(d);
+                    $('#start-date').dpSetStartDate(d.addDays(-1).asString());
+                }
+            }
+        );
+        $("#checkAll").click(function() {
+            $('input[type="checkbox"]').attr("checked",this.checked);
+        });
+        var $subBox = $("input[type='checkbox']");
+        $subBox.click(function(){
+            $("#checkAll").attr("checked",$subBox.length == $("input[type='checkbox']:checked").length ? true : false);
+        });
     })
 </script>
 </body>

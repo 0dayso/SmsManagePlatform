@@ -66,6 +66,16 @@ class User extends CI_Controller
                 $this->session->set_flashdata('err', '填写信息错误');
                 redirect(base_url('user/generalsms'));
             } else {
+                if($data['contact'] != 0){
+                    array_push($data['number'], $data['contact']);
+                }
+                if($data['contactgroup'] != 0){
+                    $result = $this->contact_model->selectContact(array('cgid'=>$data['contactgroup']), $this->uid);
+                    $result = $result['result'];
+                    foreach($result as $item){
+                        array_push($data['number'], $item['cnumber']);
+                    }
+                }
                 $data['number'] = array_map(array($this, 'judgeISP'), explode(",", $data['number']));
                 if (in_array('err', $data['number'])) {
                     $this->session->set_flashdata('err', '号码非法');
@@ -143,6 +153,7 @@ class User extends CI_Controller
         else{
             switch($type){
                 case 'select':
+                    $this->session->set_flashdata($data);
                     $data = array_filter($data);
                     $result = $this->sms_model->getHistorysms($this->uid, $data, $page);
                     if($result){
@@ -185,7 +196,7 @@ class User extends CI_Controller
         }
     }
 
-    public function maintaincontact($type = null)
+    public function maintaincontact($type = null, $page = 0)
     {
         $data = $this->input->post();
         if (!$data) {
@@ -199,9 +210,10 @@ class User extends CI_Controller
                     if (count($data) > 2)
                         redirect('user/maintaincontact');
                     else {
-                        $result = $this->contact_model->selectContact($data, $this->uid);
+                        $result = $this->contact_model->selectContact($data, $this->uid, $page);
                         if ($result) {
                             $result['contact'] = $result['result'];
+                            $result['page'] = $page;
                             $this->load->view('user/header', $this->data);
                             $this->load->view('user/contact/header', $this->data);
                             $this->load->view('user/contact/maintaincontact', $result);
@@ -219,10 +231,52 @@ class User extends CI_Controller
 
     public function importcontact()
     {
-        $this->load->view('user/header', $this->data);
-        $this->load->view('user/contact/header', $this->data);
-        $this->load->view('user/contact/importcontact', $this->data);
-
+        $data = $this->input->post();
+        $config['upload_path'] = './uploads/';
+        $config['allowed_types'] = 'txt';
+        $config['max_size'] = '200';
+        $config['overwrite'] = TRUE;
+        if(!$data){
+            $data = $this->contact_model->selectContactgroup($this->uid);
+            if ($data)
+                $this->data['contactgroup'] = $data;
+            $this->load->view('user/header', $this->data);
+            $this->load->view('user/contact/header', $this->data);
+            $this->load->view('user/contact/importcontact', $this->data);
+        }
+        else{
+            $this->load->helper('file');
+            $contactgroup = $data['contactgroup'];
+            $this->upload->do_upload();
+            $path = $this->upload->data();
+            $string = read_file('./uploads/' . $path['file_name']);
+            $number = explode(',', $string);
+            if(!$number){
+                $this->session->set_flashdata('err', '输入信息错误');
+                redirect('user/importcontactgroup');
+            }
+            else{
+                $submit = array();
+                foreach($number as $item){
+                    if(preg_match("/^13[0-9]{1}[0-9]{8}$|15[0189]{1}[0-9]{8}$|189[0-9]{8}$/", $item)){
+                        ;
+                    }else{
+                        $this->session->set_flashdata('err', '输入信息错误');
+                        redirect('user/importcontactgroup');
+                    }
+                }
+                $data['cmail'] = '导入的联系人';
+                $data['cname'] = '导入的联系人';
+                $data['cinfo'] = '导入的联系人';
+                $data['uid'] = $this->uid;
+                foreach($number as $item){
+                    $data['cnumber'] = $item;
+                    $this->contact_model->addContact($data);
+                }
+                $this->session->set_flashdata('err', '导入成功');
+                redirect('user/importcontactgroup');
+            }
+        }
     }
 
     public function addcontactgroup()

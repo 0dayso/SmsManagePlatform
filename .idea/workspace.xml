@@ -2,9 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5a46698f-c7d7-43a4-bed3-994f8bad6106" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/captcha/1378133260.96.jpg" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/check/fishsms.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/check/output.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/check/uniquesms.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/system/libraries/Upload.php" afterPath="$PROJECT_DIR$/system/libraries/Upload.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/check.php" afterPath="$PROJECT_DIR$/application/controllers/check.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/contact_model.php" afterPath="$PROJECT_DIR$/application/models/contact_model.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/user/sms/generalsms.php" afterPath="$PROJECT_DIR$/application/views/user/sms/generalsms.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/user/header.php" afterPath="$PROJECT_DIR$/application/views/user/header.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/user/contact/importcontact.php" afterPath="$PROJECT_DIR$/application/views/user/contact/importcontact.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/check/intercept.php" afterPath="$PROJECT_DIR$/application/views/check/intercept.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/user/contact/maintaincontact.php" afterPath="$PROJECT_DIR$/application/views/user/contact/maintaincontact.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/user/sendbox.php" afterPath="$PROJECT_DIR$/application/views/user/sendbox.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/sms_model.php" afterPath="$PROJECT_DIR$/application/models/sms_model.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/user.php" afterPath="$PROJECT_DIR$/application/controllers/user.php" />
@@ -15,22 +23,22 @@
     <file path="/start.php" changelist="5a46698f-c7d7-43a4-bed3-994f8bad6106" time="1378046941314" ignored="false" />
     <file path="/user_model.php" changelist="5a46698f-c7d7-43a4-bed3-994f8bad6106" time="1377954538819" ignored="false" />
     <file path="/config.php" changelist="5a46698f-c7d7-43a4-bed3-994f8bad6106" time="1377862126979" ignored="false" />
-    <file path="/user.php" changelist="5a46698f-c7d7-43a4-bed3-994f8bad6106" time="1378208583028" ignored="false" />
+    <file path="/user.php" changelist="5a46698f-c7d7-43a4-bed3-994f8bad6106" time="1378557813852" ignored="false" />
     <file path="/fee.php" changelist="5a46698f-c7d7-43a4-bed3-994f8bad6106" time="1377874572759" ignored="false" />
     <file path="/fee_model.php" changelist="5a46698f-c7d7-43a4-bed3-994f8bad6106" time="1377921998234" ignored="false" />
     <file path="/welcome.php" changelist="5a46698f-c7d7-43a4-bed3-994f8bad6106" time="1378113606976" ignored="false" />
-    <file path="/generalsms.php" changelist="5a46698f-c7d7-43a4-bed3-994f8bad6106" time="1377943252566" ignored="false" />
-    <file path="/header.php" changelist="5a46698f-c7d7-43a4-bed3-994f8bad6106" time="1378046538061" ignored="false" />
+    <file path="/generalsms.php" changelist="5a46698f-c7d7-43a4-bed3-994f8bad6106" time="1378557249915" ignored="false" />
+    <file path="/header.php" changelist="5a46698f-c7d7-43a4-bed3-994f8bad6106" time="1378458967674" ignored="false" />
     <file path="/multisms.php" changelist="5a46698f-c7d7-43a4-bed3-994f8bad6106" time="1377933167567" ignored="false" />
     <file path="/smsbox.php" changelist="5a46698f-c7d7-43a4-bed3-994f8bad6106" time="1377878361822" ignored="false" />
-    <file path="/sendbox.php" changelist="5a46698f-c7d7-43a4-bed3-994f8bad6106" time="1378209937815" ignored="false" />
+    <file path="/sendbox.php" changelist="5a46698f-c7d7-43a4-bed3-994f8bad6106" time="1378538277879" ignored="false" />
     <file path="/contact.php" changelist="5a46698f-c7d7-43a4-bed3-994f8bad6106" time="1377878906965" ignored="false" />
     <file path="/addcontactgroup.php" changelist="5a46698f-c7d7-43a4-bed3-994f8bad6106" time="1377934778568" ignored="false" />
     <file path="/managephrasecategory.php" changelist="5a46698f-c7d7-43a4-bed3-994f8bad6106" time="1377880136608" ignored="false" />
-    <file path="/contact_model.php" changelist="5a46698f-c7d7-43a4-bed3-994f8bad6106" time="1377936196080" ignored="false" />
+    <file path="/contact_model.php" changelist="5a46698f-c7d7-43a4-bed3-994f8bad6106" time="1378555658046" ignored="false" />
     <file path="/addcontact.php" changelist="5a46698f-c7d7-43a4-bed3-994f8bad6106" time="1377941581637" ignored="false" />
     <file path="/maintaincontact.php" changelist="5a46698f-c7d7-43a4-bed3-994f8bad6106" time="1377942325796" ignored="false" />
-    <file path="/sms_model.php" changelist="5a46698f-c7d7-43a4-bed3-994f8bad6106" time="1378209593246" ignored="false" />
+    <file path="/sms_model.php" changelist="5a46698f-c7d7-43a4-bed3-994f8bad6106" time="1378552276353" ignored="false" />
     <file path="/upload.js" changelist="5a46698f-c7d7-43a4-bed3-994f8bad6106" time="1377931763307" ignored="false" />
     <file path="/maintaincontactgroup.php" changelist="5a46698f-c7d7-43a4-bed3-994f8bad6106" time="1377936839227" ignored="false" />
     <file path="/phrase_model.php" changelist="5a46698f-c7d7-43a4-bed3-994f8bad6106" time="1377937158999" ignored="false" />
@@ -38,13 +46,17 @@
     <file path="/admin.php" changelist="5a46698f-c7d7-43a4-bed3-994f8bad6106" time="1377961274253" ignored="false" />
     <file path="/factory_model.php" changelist="5a46698f-c7d7-43a4-bed3-994f8bad6106" time="1377955599592" ignored="false" />
     <file path="/addfactory.php" changelist="5a46698f-c7d7-43a4-bed3-994f8bad6106" time="1377950300851" ignored="false" />
-    <file path="/Dummy.txt" changelist="5a46698f-c7d7-43a4-bed3-994f8bad6106" time="1378176807169" ignored="false" />
+    <file path="/Dummy.txt" changelist="5a46698f-c7d7-43a4-bed3-994f8bad6106" time="1378553406226" ignored="false" />
     <file path="/usermanage.php" changelist="5a46698f-c7d7-43a4-bed3-994f8bad6106" time="1377953011083" ignored="false" />
     <file path="/adduser.php" changelist="5a46698f-c7d7-43a4-bed3-994f8bad6106" time="1377954083654" ignored="false" />
     <file path="/charge.php" changelist="5a46698f-c7d7-43a4-bed3-994f8bad6106" time="1377960641297" ignored="false" />
     <file path="/addcharge.php" changelist="5a46698f-c7d7-43a4-bed3-994f8bad6106" time="1377960700658" ignored="false" />
-    <file path="/intercept.php" changelist="5a46698f-c7d7-43a4-bed3-994f8bad6106" time="1378209299515" ignored="false" />
-    <file path="/check.php" changelist="5a46698f-c7d7-43a4-bed3-994f8bad6106" time="1378209740482" ignored="false" />
+    <file path="/intercept.php" changelist="5a46698f-c7d7-43a4-bed3-994f8bad6106" time="1378556019331" ignored="false" />
+    <file path="/check.php" changelist="5a46698f-c7d7-43a4-bed3-994f8bad6106" time="1378552621876" ignored="false" />
+    <file path="/uniquesms.php" changelist="5a46698f-c7d7-43a4-bed3-994f8bad6106" time="1378551284838" ignored="false" />
+    <file path="/fishsms.php" changelist="5a46698f-c7d7-43a4-bed3-994f8bad6106" time="1378551419292" ignored="false" />
+    <file path="/output.php" changelist="5a46698f-c7d7-43a4-bed3-994f8bad6106" time="1378553308330" ignored="false" />
+    <file path="/importcontact.php" changelist="5a46698f-c7d7-43a4-bed3-994f8bad6106" time="1378555503336" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +79,7 @@
       <file leaf-file-name="intercept.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/check/intercept.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="105" column="69" selection-start="5238" selection-end="5238" vertical-scroll-proportion="-9.107142">
+            <state line="159" column="11" selection-start="7218" selection-end="7218" vertical-scroll-proportion="-25.0">
               <folding />
             </state>
           </provider>
@@ -76,83 +88,98 @@
       <file leaf-file-name="check.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/controllers/check.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="66" column="58" selection-start="2302" selection-end="2302" vertical-scroll-proportion="-17.035715">
+            <state line="124" column="53" selection-start="4358" selection-end="4358" vertical-scroll-proportion="-14.142858">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="factory_model.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/models/factory_model.php">
+      <file leaf-file-name="output.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/check/output.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="27" selection-start="784" selection-end="784" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="89" column="50" selection-start="4687" selection-end="4687" vertical-scroll-proportion="-0.6785714">
+              <folding>
+                <marker date="1378553309851" expanded="true" signature="712:772" placeholder="..." />
+                <marker date="1378553309851" expanded="true" signature="737:772" placeholder="..." />
+                <marker date="1378553309851" expanded="true" signature="1348:1383" placeholder="..." />
+                <marker date="1378553309851" expanded="true" signature="1894:1929" placeholder="..." />
+                <marker date="1378553309851" expanded="true" signature="2153:2190" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sms_model.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/application/models/sms_model.php">
+      <file leaf-file-name="fishsms.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/check/fishsms.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="143" column="38" selection-start="4769" selection-end="4769" vertical-scroll-proportion="4.0243444">
-              <folding />
+            <state line="58" column="115" selection-start="2194" selection-end="2745" vertical-scroll-proportion="-23.071428">
+              <folding>
+                <marker date="1378551422887" expanded="true" signature="674:726" placeholder="..." />
+                <marker date="1378551422887" expanded="true" signature="695:726" placeholder="..." />
+                <marker date="1378551422887" expanded="true" signature="1232:1263" placeholder="..." />
+                <marker date="1378551422887" expanded="true" signature="1734:1767" placeholder="..." />
+                <marker date="1378551422887" expanded="true" signature="1935:1989" placeholder="..." />
+                <marker date="1378551422887" expanded="true" signature="1956:1989" placeholder="..." />
+                <marker date="1378551422887" expanded="true" signature="2060:2093" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/controllers/admin.php">
+      <file leaf-file-name="user.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/controllers/user.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="41" selection-start="600" selection-end="600" vertical-scroll-proportion="15.607142">
+            <state line="78" column="101" selection-start="3058" selection-end="3058" vertical-scroll-proportion="0.64408726">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="header.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/user/header.php">
+        <entry file="file://$PROJECT_DIR$/application/views/user/sms/header.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="19" selection-start="756" selection-end="756" vertical-scroll-proportion="0.0">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="welcome.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/user/welcome.php">
+      <file leaf-file-name="Upload.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/system/libraries/Upload.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="30" selection-start="845" selection-end="845" vertical-scroll-proportion="0.0">
+            <state line="403" column="0" selection-start="10574" selection-end="10574" vertical-scroll-proportion="-4.101695">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="start.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/start.php">
+      <file leaf-file-name="importcontact.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/user/contact/importcontact.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="7" selection-start="1074" selection-end="1074" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="user.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/controllers/user.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="146" column="58" selection-start="5642" selection-end="5642" vertical-scroll-proportion="-6.785714">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sendbox.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/user/sendbox.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="75" column="21" selection-start="3781" selection-end="3781" vertical-scroll-proportion="-6.071429">
+            <state line="21" column="24" selection-start="1000" selection-end="1000" vertical-scroll-proportion="-14.25">
               <folding>
-                <marker date="1378209933374" expanded="true" signature="4466:4684" placeholder="..." />
-                <marker date="1378209933374" expanded="true" signature="4510:4630" placeholder="..." />
+                <marker date="1378555503223" expanded="true" signature="202:262" placeholder="..." />
+                <marker date="1378555503223" expanded="true" signature="227:262" placeholder="..." />
+                <marker date="1378555503223" expanded="true" signature="307:363" placeholder="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="generalsms.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/user/sms/generalsms.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="46" column="43" selection-start="2297" selection-end="2297" vertical-scroll-proportion="-14.357142">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="contact_model.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/models/contact_model.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="34" column="56" selection-start="1054" selection-end="1054" vertical-scroll-proportion="-15.607142">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -175,31 +202,30 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/application/views/admin/adduser.php" />
-        <option value="$PROJECT_DIR$/application/models/user_model.php" />
-        <option value="$PROJECT_DIR$/application/models/factory_model.php" />
-        <option value="$PROJECT_DIR$/application/views/admin/charge.php" />
-        <option value="$PROJECT_DIR$/application/views/admin/addcharge.php" />
-        <option value="$PROJECT_DIR$/application/controllers/admin.php" />
-        <option value="$PROJECT_DIR$/styles/main.css" />
-        <option value="$PROJECT_DIR$/application/views/user/header.php" />
-        <option value="$PROJECT_DIR$/application/views/start.php" />
-        <option value="$PROJECT_DIR$/application/controllers/start.php" />
         <option value="$PROJECT_DIR$/application/views/user/welcome.php" />
-        <option value="$PROJECT_DIR$/application/controllers/user.php" />
-        <option value="$PROJECT_DIR$/application/views/check/intercept.php" />
-        <option value="$PROJECT_DIR$/application/controllers/check.php" />
-        <option value="$PROJECT_DIR$/application/models/sms_model.php" />
+        <option value="$PROJECT_DIR$/application/views/user/header.php" />
+        <option value="$PROJECT_DIR$/styles/datePicker.css" />
         <option value="$PROJECT_DIR$/application/views/user/sendbox.php" />
+        <option value="$PROJECT_DIR$/application/views/check/fishsms.php" />
+        <option value="$PROJECT_DIR$/application/models/sms_model.php" />
+        <option value="$PROJECT_DIR$/application/controllers/check.php" />
+        <option value="$PROJECT_DIR$/application/views/check/uniquesms.php" />
+        <option value="$PROJECT_DIR$/application/views/check/output.php" />
+        <option value="$PROJECT_DIR$/application/views/user/contact/maintaincontact.php" />
+        <option value="$PROJECT_DIR$/system/libraries/Upload.php" />
+        <option value="$PROJECT_DIR$/application/views/user/contact/importcontact.php" />
+        <option value="$PROJECT_DIR$/application/views/check/intercept.php" />
+        <option value="$PROJECT_DIR$/application/views/user/sms/generalsms.php" />
+        <option value="$PROJECT_DIR$/application/models/contact_model.php" />
+        <option value="$PROJECT_DIR$/application/controllers/user.php" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1" />
-    <option name="y" value="-5" />
-    <option name="width" value="1368" />
-    <option name="height" value="774" />
+    <option name="y" value="24" />
+    <option name="width" value="1920" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -256,7 +282,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="styles" />
+              <option name="myItemId" value="system" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -270,7 +296,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
+              <option name="myItemId" value="system" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="libraries" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -325,6 +355,58 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="user" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="user" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="user" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="contact" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -439,18 +521,22 @@
       <created>1377961322565</created>
       <updated>1377961322565</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="original">
+      <created>1378211023000</created>
+      <updated>1378211023000</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="-5" width="1368" height="774" extended-state="6" />
+    <frame x="0" y="24" width="1920" height="1056" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32901135" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19072948" sideWeight="0.6709887" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15240642" sideWeight="0.6709887" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -528,29 +614,22 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/views/admin/addcharge.php">
+    <entry file="file://$PROJECT_DIR$/application/views/user/sendbox.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="93" selection-start="1256" selection-end="1256" vertical-scroll-proportion="0.034798536" />
+        <state line="67" column="47" selection-start="3450" selection-end="3473" vertical-scroll-proportion="0.0">
+          <folding>
+            <marker date="1378538277930" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1378538277930" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1378538277930" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1378538277930" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1378538277930" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/styles/main.css">
+    <entry file="file://$PROJECT_DIR$/application/models/user_model.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="209" column="17" selection-start="3168" selection-end="3168" vertical-scroll-proportion="0.4341637" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/admin/charge.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="74" selection-start="1208" selection-end="1208" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/admin/manage.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="78" column="0" selection-start="4040" selection-end="4249" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/start.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="75" column="29" selection-start="2413" selection-end="2413" vertical-scroll-proportion="0.0">
+        <state line="17" column="42" selection-start="531" selection-end="531" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -562,75 +641,120 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/start.php">
+    <entry file="file://$PROJECT_DIR$/application/views/check/uniquesms.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="7" selection-start="1074" selection-end="1074" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/user/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="19" selection-start="756" selection-end="756" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/user/welcome.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="30" selection-start="845" selection-end="845" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/factory_model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="27" selection-start="784" selection-end="784" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/check/intercept.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="105" column="69" selection-start="5238" selection-end="5238" vertical-scroll-proportion="-9.107142">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/check.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="58" selection-start="2302" selection-end="2302" vertical-scroll-proportion="-17.035715">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/admin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="41" selection-start="600" selection-end="600" vertical-scroll-proportion="15.607142">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/user/sendbox.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="75" column="21" selection-start="3781" selection-end="3781" vertical-scroll-proportion="-6.071429">
+        <state line="81" column="119" selection-start="3387" selection-end="3953" vertical-scroll-proportion="0.0">
           <folding>
-            <marker date="1378209933374" expanded="true" signature="4466:4684" placeholder="..." />
-            <marker date="1378209933374" expanded="true" signature="4510:4630" placeholder="..." />
+            <marker date="1378552707435" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1378552707435" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1378552707435" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1378552707435" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1378552707435" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1378552707435" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1378552707435" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1378552707435" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/user.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="146" column="58" selection-start="5642" selection-end="5642" vertical-scroll-proportion="-6.785714">
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/models/sms_model.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="143" column="38" selection-start="4769" selection-end="4769" vertical-scroll-proportion="4.0243444">
+        <state line="245" column="33" selection-start="8557" selection-end="8557" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/user/contact/maintaincontact.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="90" selection-start="2243" selection-end="2243" vertical-scroll-proportion="-10.75">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/system/libraries/Upload.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="403" column="0" selection-start="10574" selection-end="10574" vertical-scroll-proportion="-4.101695">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/check/output.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="89" column="50" selection-start="4687" selection-end="4687" vertical-scroll-proportion="-0.6785714">
+          <folding>
+            <marker date="1378553309851" expanded="true" signature="712:772" placeholder="..." />
+            <marker date="1378553309851" expanded="true" signature="737:772" placeholder="..." />
+            <marker date="1378553309851" expanded="true" signature="1348:1383" placeholder="..." />
+            <marker date="1378553309851" expanded="true" signature="1894:1929" placeholder="..." />
+            <marker date="1378553309851" expanded="true" signature="2153:2190" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/check/fishsms.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="58" column="115" selection-start="2194" selection-end="2745" vertical-scroll-proportion="-23.071428">
+          <folding>
+            <marker date="1378551422887" expanded="true" signature="674:726" placeholder="..." />
+            <marker date="1378551422887" expanded="true" signature="695:726" placeholder="..." />
+            <marker date="1378551422887" expanded="true" signature="1232:1263" placeholder="..." />
+            <marker date="1378551422887" expanded="true" signature="1734:1767" placeholder="..." />
+            <marker date="1378551422887" expanded="true" signature="1935:1989" placeholder="..." />
+            <marker date="1378551422887" expanded="true" signature="1956:1989" placeholder="..." />
+            <marker date="1378551422887" expanded="true" signature="2060:2093" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/check.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="124" column="53" selection-start="4358" selection-end="4358" vertical-scroll-proportion="-14.142858">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/user/contact/importcontact.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="24" selection-start="1000" selection-end="1000" vertical-scroll-proportion="-14.25">
+          <folding>
+            <marker date="1378555503223" expanded="true" signature="202:262" placeholder="..." />
+            <marker date="1378555503223" expanded="true" signature="227:262" placeholder="..." />
+            <marker date="1378555503223" expanded="true" signature="307:363" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/check/intercept.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="159" column="11" selection-start="7218" selection-end="7218" vertical-scroll-proportion="-25.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/user/sms/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/user/sms/generalsms.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="46" column="43" selection-start="2297" selection-end="2297" vertical-scroll-proportion="-14.357142">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/contact_model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="56" selection-start="1054" selection-end="1054" vertical-scroll-proportion="-15.607142">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/user.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="78" column="101" selection-start="3058" selection-end="3058" vertical-scroll-proportion="0.64408726">
           <folding />
         </state>
       </provider>

@@ -11,6 +11,7 @@ class Sms_model extends CI_Model
     public function __construct()
     {
         $this->load->database();
+        $this->load->helper('date');
     }
 
     public function addSmstask($data)
@@ -39,14 +40,18 @@ class Sms_model extends CI_Model
         $this->db->from('smsmt, mtcontent');
         $this->db->where('smsmt.csid = mtcontent.csid');
         $this->db->where('smsmt.uid', $uid);
-        if(array_key_exists('startime', $data))
-            $this->db->where('smsmt.addtime >', $data['startime']);
-        if(array_key_exists('endtime', $data))
-            $this->db->where('smsmt.addtime <', $data['endtime']);
+        if(array_key_exists('startime', $data)){
+            $data['startime'] = human_to_unix($data['startime'].' 00:00 AM');
+            $this->db->where('UNIX_TIMESTAMP(smsmt.addtime) >=', $data['startime']);
+        }
+        if(array_key_exists('endtime', $data)){
+            $this->db->where('smsmt.addtime <=', $data['endtime']);
+        }
         if(array_key_exists('clientnumber', $data))
             $this->db->where('smsmt.snumber', $data['clientnumber']);
         if(array_key_exists('flag', $data))
             $this->db->where('smsmt.flag', $data['flag']);
+        $this->db->order_by('smsmt.addtime', 'desc');
         $this->db->limit(2, $page * 2);
         $query = $this->db->get();
         if($query->num_rows())
@@ -55,9 +60,12 @@ class Sms_model extends CI_Model
             return FALSE;
     }
 
-    public function getUnchecksms($data, $page)
+    public function getUnchecksms($data, $page, $flag = null)
     {
-        $query = $this->db->get_where('mtcontent', array(
+        if($flag)
+            $query = $this->db->get('mtcontent');
+        else
+            $query = $this->db->get_where('mtcontent', array(
             'flag'=>0
         ));
         $returndata = array();
@@ -72,10 +80,18 @@ class Sms_model extends CI_Model
                 $this->db->where('addtime >=', $data['startime']);
             if(array_key_exists('endtime', $data))
                 $this->db->where('addtime <=', $data['endtime']);
-            if(array_key_exists('gatetype', $data))
-                $this->db->where('type', $data['gatetype']);
-            $this->db->limit(3, $page * 3);
+            if(array_key_exists('gatetype', $data)){
+                if($data['gatetype'] ==0)
+                    $this->db->where('type', $data['gatetype']);
+                else
+                    $this->db->where('type', $data['gatetype']);
+            }
+            if(array_key_exists('flag', $data))
+                $this->db->where('flag', $data['gatetype']);
+            $this->db->limit(4, $page * 4);
             $query = $this->db->get();
+            if($query->num_rows() == 0)
+                return $returndata;
             $query = $query->result_array();
             $uid = $query[0]['uid'];
             $mobilenum = 0;
@@ -133,6 +149,103 @@ class Sms_model extends CI_Model
                 ));
         }
         return $returndata;
+    }
+
+    public function getFishsms($data, $page)
+    {
+        $query = $this->db->get('mtcontent');
+        $returndata = array();
+        $result = $query->result_array();
+        foreach($result as $item)
+        {
+            $csid = $item['csid'];
+            $this->db->select('*');
+            $this->db->from('smsmt, fishnumber');
+            $this->db->where('smsmt.snumber = fishnumber.number');
+            $this->db->where('smsmt.csid = '.$csid);
+            if(array_key_exists('startime', $data))
+                $this->db->where('smsmt.addtime >=', $data['startime']);
+            if(array_key_exists('endtime', $data))
+                $this->db->where('smsmt.addtime <=', $data['endtime']);
+            if(array_key_exists('gatetype', $data)){
+                if($data['gatetype'] ==0)
+                    $this->db->where('smsmt.type', $data['gatetype']);
+                else
+                    $this->db->where('smsmt.type', $data['gatetype']);
+            }
+            $this->db->limit(4, $page * 4);
+            $query = $this->db->get();
+            if($query->num_rows() == 0)
+                return $returndata;
+            $query = $query->result_array();
+            $uid = $query[0]['uid'];
+            $mobilenum = 0;
+            $unicomnum = 0;
+            $telecomnum = 0;
+            foreach($query as $tmp){
+                switch($tmp['type']){
+                    case 1:
+                        ++$mobilenum;
+                        break;
+                    case 2:
+                        ++$unicomnum;
+                        break;
+                    case 3:
+                        ++$telecomnum;
+                        break;
+                }
+            }
+            $query = $this->db->get_where('user', array(
+                'uid'=>$uid
+            ));
+            $query = $query->row_array();
+            $fid = $query['fid'];
+            $query = $this->db->get_where('factory', array(
+                'fid'=>$fid
+            ));
+            $query = $query->row_array();
+            $fname = $query['fname'];
+            if($mobilenum)
+                array_push($returndata, array(
+                    'csid'=>$csid,
+                    'fname'=>$fname,
+                    'content'=>$item['content'],
+                    'num'=>$mobilenum,
+                    'gatetype'=>'移动',
+                    'addtime'=>$item['addtime']
+                ));
+            if($unicomnum)
+                array_push($returndata, array(
+                    'csid'=>$csid,
+                    'fname'=>$fname,
+                    'content'=>$item['content'],
+                    'num'=>$unicomnum,
+                    'gatetype'=>'联通',
+                    'addtime'=>$item['addtime']
+                ));
+            if($telecomnum)
+                array_push($returndata, array(
+                    'csid'=>$csid,
+                    'fname'=>$fname,
+                    'content'=>$item['content'],
+                    'num'=>$telecomnum,
+                    'gatetype'=>'电信',
+                    'addtime'=>$item['addtime']
+                ));
+        }
+        return $returndata;
+    }
+
+    public function getOutput($csid, $type)
+    {
+        $query = $this->db->get_where('smsmt', array(
+            'csid'=>$csid,
+            'type'=>$type
+        ));
+        if($query->num_rows())
+            return $query->result_array();
+        else
+            return FALSE;
     }
 
     public function acceptSMS($csid, $flag)

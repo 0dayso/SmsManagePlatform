@@ -22,16 +22,20 @@ class Contact_model extends CI_Model
             return FALSE;
     }
 
-    public function selectContact($data, $uid)
+    public function selectContact($data, $uid, $page = null)
     {
         $this->db->select('*');
         $this->db->from('contact, contactgroup');
         $this->db->where('contact.cgid = contactgroup.cgid');
         if(isset($data['cname']))
-            $this->db->where('cname', $data['cname']);
+            $this->db->where('contact.cname', $data['cname']);
         if(isset($data['cgroup']))
-            $this->db->where('cgroup', $data['cgname']);
+            $this->db->where('contactgroup.cgroup', $data['cgroup']);
+        if(isset($data['cgid']))
+            $this->db->where('contact.cgid', $data['cgid']);
         $this->db->where('contact.uid', $uid);
+        if($page)
+            $this->db->limit(2, $page * 2);
         $query = $this->db->get();
         if($query->num_rows()){
             $result['numrow'] = $query->num_rows();
