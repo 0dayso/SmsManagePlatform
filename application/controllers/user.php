@@ -428,12 +428,57 @@ class User extends CI_Controller
         }
     }
 
-    public function managephrase()
+    public function managephrase($type = null, $page = 0)
     {
-        $this->load->view('user/header', $this->data);
-        $this->load->view('user/phrases/header', $this->data);
-        $this->load->view('user/phrases/managephrase', $this->data);
-
+        $data = $this->input->post();
+        if (!$data) {
+            $data = $this->phrase_model->selectPhrasegroup($this->uid);
+            if ($data)
+                $this->data['pgroup'] = $data;
+            $this->load->view('user/header', $this->data);
+            $this->load->view('user/phrases/header', $this->data);
+            $this->load->view('user/phrases/managephrase', $this->data);
+        } else {
+            $this->session->set_flashdata($data);
+            switch ($type) {
+                case 'select':
+                    $data = array_filter($data);
+                    if (count($data) > 2)
+                        redirect('user/managephrase');
+                    else {
+                        $result = $this->phrase_model->selectPhrase($data, $this->uid, $page);
+                        $data = $this->phrase_model->selectPhrasegroup($this->uid);
+                        if ($data)
+                            $this->data['phrasegroup'] = $data;
+                        if ($result) {
+                            $result['phrase'] = $result['result'];
+                            $result['page'] = $page;
+                            $this->load->view('user/header', $this->data);
+                            $this->load->view('user/phrases/header', $this->data);
+                            $this->load->view('user/phrases/managephrase', $result);
+                        } else {
+                            $this->session->set_flashdata('err', '没有找到');
+                            redirect(base_url('user/managephrase'));
+                        }
+                    }
+                    break;
+                case 'del':
+                    $data = array_filter($data);
+                    if(count($data) != 0){
+                        foreach ($data['checkbox'] as $item) {
+                            $this->phrase_model->delPhrase($item);
+                        }
+                        $this->session->set_flashdata('err', '删除成功');
+                    }
+                    else{
+                        $this->session->set_flashdata('err', '请选择一个要删除的短语');
+                    }
+                    redirect(base_url('user/managephrase'));
+                    break;
+                default:
+                    redirect(base_url('user/managephrase'));
+            }
+        }
     }
 
     public function addphrasecategory()

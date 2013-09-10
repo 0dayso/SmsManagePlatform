@@ -167,10 +167,6 @@
                 }
             }
         );
-        $('.button-s').click(function () {
-            $("form").attr('action', $(this).val());
-            $("form").submit();
-        })
         $("#checkAll").click(function () {
             $('input[type="checkbox"]').attr("checked", this.checked);
         });

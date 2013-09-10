@@ -24,7 +24,7 @@
                     <td class="blue">选择自定义短语</td>
                     <td>
                         <select name="customphrases" id="customphrases">
-                            <option value="0">不使用</option>
+                            <option value="">不使用</option>
                             <?php foreach($customphrases['result'] as $item):?>
                                 <option value="<?=$item['pcontent']?>"><?=$item['pcontent']?></option>
                             <?php endforeach ?>
