@@ -9,8 +9,8 @@
                     <tr>
                         <td class="blue"><span class="red">*</span>联系人组描述</td>
                         <td>
-                            <textarea name="cginfo" cols="30" rows="10"></textarea>
-                            <p>最多为<span class="number">100</span>字，已输入<span class="number">0</span>字。</p>
+                            <textarea name="cginfo" cols="30" rows="10" id="content"></textarea>
+                            <p>最多为<span class="number">100</span>字，已输入<span class="number" id="textnumber">0</span>字。</p>
                         </td>
                     </tr>
                     <tr>
@@ -25,5 +25,16 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+    $(function(){
+        $('#content').keydown(function(){
+            if($('#content').val().length+1 > 70){
+                alert('字数超过限制');
+                $('#content').val($('#content').val().slice(0, 70));
+            }
+            $('#textnumber').text($('#content').val().length+1);
+        })
+    })
+</script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 <div id="main">
-        <div id="leftside">
+        <div id="leftside" style="height: 950px">
             <ul>
                 <li><a href="<?=base_url('user/generalsms')?>">短信发送</a></li>
                 <li><a href="<?=base_url('user/smsbox')?>">收件箱</a></li>
@@ -9,7 +9,7 @@
                 <li class="white"><a href="<?=base_url('user/manage')?>">用户管理</a></li>
             </ul>
         </div>
-        <div id="rightside">
+        <div id="rightside" style="height: 950px">
             <p class="title-intro">用户管理&gt;&gt;用户管理</p>
             <form action="" method="post">
                 <table>
@@ -32,7 +32,7 @@
                         <td colspan="5" class="blue">&nbsp;</td>
                     </tr>
                     <tr>
-                        <td colspan="5"><span class="result">查询结果：共<span>0</span>条记录，当前<span>0/0</span>页</span>
+                        <td colspan="5">
                             <a href="#" class="button-s">首页</a>
                             <a href="#" class="button-s">上一页</a>
                             <a href="#" class="button-s">下一页</a>

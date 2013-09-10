@@ -17,13 +17,17 @@
                     <td class="blue">短信内容</td>
                     <td>
                         <textarea name="content" id="content" cols="30" rows="10"></textarea>
-                        <p>最多可输入<span class="number">70</span>字，已输入<span class="number" id="textnumber">0</span>字，系统会按标准自动拆分<span class="number">0</span>条短信发送</p>
+                        <p>最多可输入<span class="number">70</span>字，已输入<span class="number" id="textnumber">0</span>字</p>
                     </td>
                 </tr>
                 <tr>
                     <td class="blue">选择自定义短语</td>
-                    <td><select name="customphrases" id="customphrases">
+                    <td>
+                        <select name="customphrases" id="customphrases">
                             <option value="0">不使用</option>
+                            <?php foreach($customphrases['result'] as $item):?>
+                                <option value="<?=$item['pcontent']?>"><?=$item['pcontent']?></option>
+                            <?php endforeach ?>
                         </select>
                     </td>
                 </tr>
@@ -73,6 +77,10 @@
                 $('#content').val($('#content').val().slice(0, 70));
             }
             $('#textnumber').text($('#content').val().length+1);
+        })
+        $('#customphrases').change(function(){
+            var checkValue = $('#customphrases').val();
+            $('#content').val(checkValue);
         })
     })
 </script>

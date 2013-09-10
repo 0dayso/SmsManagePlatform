@@ -23,7 +23,7 @@
                 <td colspan="4" class="blue">&nbsp;</td>
             </tr>
             <tr>
-                <td colspan="4"><span class="result">查询结果：共<span>0</span>条记录，当前<span>0/0</span>页</span>
+                <td colspan="4">
                     <a href="#" class="button-s">首页</a>
                     <a href="#" class="button-s">上一页</a>
                     <a href="#" class="button-s">下一页</a>

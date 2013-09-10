@@ -29,6 +29,7 @@ class User extends CI_Controller
         $this->load->model('fee_model');
         $this->load->model('contact_model');
         $this->load->model('sms_model');
+        $this->load->model('phrase_model');
 
         //私有变量初始化
         $this->uid = $this->session->userdata('uid');
@@ -58,6 +59,9 @@ class User extends CI_Controller
             $data = $this->contact_model->selectContactgroup($this->uid);
             if ($data)
                 $this->data['contactgroup'] = $data;
+            $data = $this->phrase_model->selectPhrase(null, $this->uid);
+            if ($data)
+                $this->data['customphrases'] = $data;
             $this->load->view('user/header', $this->data);
             $this->load->view('user/sms/header', $this->data);
             $this->load->view('user/sms/generalsms', $this->data);
@@ -107,6 +111,9 @@ class User extends CI_Controller
     {
         $data = $this->input->post();
         if (!$data) {
+            $data = $this->phrase_model->selectPhrase(null, $this->uid);
+            if ($data)
+                $this->data['customphrases'] = $data;
             $this->load->view('user/header', $this->data);
             $this->load->view('user/sms/header', $this->data);
             $this->load->view('user/sms/multisms');
@@ -399,9 +406,26 @@ class User extends CI_Controller
 
     public function addphrase()
     {
-        $this->load->view('user/header', $this->data);
-        $this->load->view('user/phrases/header', $this->data);
-        $this->load->view('user/phrases/addphrase', $this->data);
+        $data = $this->input->post();
+        if (!$data) {
+            $this->load->view('user/header', $this->data);
+            $this->load->view('user/phrases/header', $this->data);
+            $result['pgroup'] = $this->phrase_model->selectPhrasegroup($this->uid);
+            $this->load->view('user/phrases/addphrase', $result);
+        } else {
+            $data = array_filter($data);
+            if (count($data) < 2 || (count($data) == 2 && array_key_exists('pinfo', $data))) {
+                $this->session->set_flashdata('err', '请填写所有必填项');
+                redirect(base_url('user/addphrase'));
+            }
+            $data['uid'] = $this->uid;
+            if ($this->phrase_model->addPhrase($data))
+                $this->session->set_flashdata('err', '操作成功');
+            else {
+                $this->session->set_flashdata('err', '操作失败，请检查你的输入');
+            }
+            redirect(base_url('user/addphrase'));
+        }
     }
 
     public function managephrase()
@@ -414,9 +438,29 @@ class User extends CI_Controller
 
     public function addphrasecategory()
     {
-        $this->load->view('user/header', $this->data);
-        $this->load->view('user/phrases/header', $this->data);
-        $this->load->view('user/phrases/addphrasecategory', $this->data);
+        $data = $this->input->post();
+        if (!$data) {
+            $this->load->view('user/header', $this->data);
+            $this->load->view('user/phrases/header', $this->data);
+            $this->load->view('user/phrases/addphrasecategory', $this->data);
+        } else {
+            $insertdata['pgname'] = trim($data['pgname']);
+            $insertdata['pginfo'] = trim($data['pginfo']);
+            if (strlen($insertdata['pgname']) == 0 || strlen($insertdata['pginfo']) == 0) {
+                $this->session->set_flashdata('err', '输入信息错误');
+                redirect('user/addphrasecategory');
+            } else {
+                $insertdata['uid'] = $this->uid;
+                if($this->phrase_model->addPhrasegroup($insertdata)){
+                    $this->session->set_flashdata('err', '短语组组添加成功');
+                    redirect('user/addphrasecategory');
+                }
+                else{
+                    $this->session->set_flashdata('err', '短语组添加失败，请检查你的输入');
+                    redirect('user/addphrasecategory');
+                }
+            }
+        }
     }
 
     public function managephrasecategory()

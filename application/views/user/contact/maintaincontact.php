@@ -29,7 +29,8 @@
                         <td colspan="7" class="blue">&nbsp;</td>
                     </tr>
                     <tr>
-                        <td colspan="7"><span class="result">查询结果：共<span><?php if(isset($contact)) echo $numrow; else echo 0;?></span>条记录，当前<span>0/0</span>页</span>
+                        <td colspan="7">
+                            <span class="result">查询结果：共<span><?php if(isset($contact)) echo $numrow; else echo 0;?></span>条记录
                             <button type="button" value="<?=base_url('user/maintaincontact/select/0')?>" class="button-s">首页</button>
                             <?php if(isset($page)):?>
                             <?php if($page != 0):?>
