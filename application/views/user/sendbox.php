@@ -157,7 +157,7 @@
         $subBox.click(function () {
             $("#checkAll").attr("checked", $subBox.length == $("input[type='checkbox']:checked").length ? true : false);
         });
-
+    });
 </script>
 </body>
 </html>

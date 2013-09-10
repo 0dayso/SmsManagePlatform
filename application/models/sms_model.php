@@ -52,7 +52,7 @@ class Sms_model extends CI_Model
         if(array_key_exists('flag', $data))
             $this->db->where('smsmt.flag', $data['flag']);
         $this->db->order_by('smsmt.addtime', 'desc');
-        $this->db->limit(2, $page * 2);
+        $this->db->limit(5, $page * 5);
         $query = $this->db->get();
         if($query->num_rows())
             return $query->result_array();
@@ -88,7 +88,7 @@ class Sms_model extends CI_Model
             }
             if(array_key_exists('flag', $data))
                 $this->db->where('flag', $data['gatetype']);
-            $this->db->limit(4, $page * 4);
+            $this->db->limit(5, $page * 5);
             $query = $this->db->get();
             if($query->num_rows() == 0)
                 return $returndata;
