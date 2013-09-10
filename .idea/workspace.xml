@@ -2,28 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5a46698f-c7d7-43a4-bed3-994f8bad6106" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/captcha/1378777034.6126.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/captcha/1378777036.2905.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/captcha/1378777037.4513.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/captcha/1378777112.4382.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/captcha/1378777113.4362.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/captcha/1378777113.9617.jpg" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/contact_model.php" afterPath="$PROJECT_DIR$/application/models/contact_model.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/user/contact/maintaincontact.php" afterPath="$PROJECT_DIR$/application/views/user/contact/maintaincontact.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/user/contact/maintaincontactgroup.php" afterPath="$PROJECT_DIR$/application/views/user/contact/maintaincontactgroup.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/user/manage.php" afterPath="$PROJECT_DIR$/application/views/user/manage.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/check/output.php" afterPath="$PROJECT_DIR$/application/views/check/output.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/user/sendbox.php" afterPath="$PROJECT_DIR$/application/views/user/sendbox.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/sms_model.php" afterPath="$PROJECT_DIR$/application/models/sms_model.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/user.php" afterPath="$PROJECT_DIR$/application/controllers/user.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="sms.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/start.php" changelist="5a46698f-c7d7-43a4-bed3-994f8bad6106" time="1378046941314" ignored="false" />
     <file path="/user_model.php" changelist="5a46698f-c7d7-43a4-bed3-994f8bad6106" time="1377954538819" ignored="false" />
     <file path="/config.php" changelist="5a46698f-c7d7-43a4-bed3-994f8bad6106" time="1377862126979" ignored="false" />
-    <file path="/user.php" changelist="5a46698f-c7d7-43a4-bed3-994f8bad6106" time="1378786905334" ignored="false" />
+    <file path="/user.php" changelist="5a46698f-c7d7-43a4-bed3-994f8bad6106" time="1378788846156" ignored="false" />
     <file path="/fee.php" changelist="5a46698f-c7d7-43a4-bed3-994f8bad6106" time="1377874572759" ignored="false" />
     <file path="/fee_model.php" changelist="5a46698f-c7d7-43a4-bed3-994f8bad6106" time="1377921998234" ignored="false" />
     <file path="/welcome.php" changelist="5a46698f-c7d7-43a4-bed3-994f8bad6106" time="1378113606976" ignored="false" />
@@ -76,10 +62,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="user.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="user.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/controllers/user.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="288" column="27" selection-start="11889" selection-end="11889" vertical-scroll-proportion="45.392857">
+            <state line="73" column="17" selection-start="2734" selection-end="2734" vertical-scroll-proportion="0.45833334">
               <folding />
             </state>
           </provider>
@@ -88,18 +74,19 @@
       <file leaf-file-name="check.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/controllers/check.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="74" column="40" selection-start="2502" selection-end="2502" vertical-scroll-proportion="30.535715">
+            <state line="74" column="40" selection-start="2502" selection-end="2502" vertical-scroll-proportion="24.428572">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="output.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="output.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/check/output.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="46" selection-start="555" selection-end="555" vertical-scroll-proportion="0.54702497">
+            <state line="22" column="40" selection-start="884" selection-end="884" vertical-scroll-proportion="-2.7142856">
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -199,17 +186,17 @@
         <option value="$PROJECT_DIR$/application/views/user/sendbox.php" />
         <option value="$PROJECT_DIR$/application/views/user/contact/maintaincontactgroup.php" />
         <option value="$PROJECT_DIR$/application/models/contact_model.php" />
-        <option value="$PROJECT_DIR$/application/controllers/user.php" />
         <option value="$PROJECT_DIR$/application/models/sms_model.php" />
         <option value="$PROJECT_DIR$/application/views/check/output.php" />
+        <option value="$PROJECT_DIR$/application/controllers/user.php" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="y" value="24" />
+    <option name="y" value="53" />
     <option name="width" value="1366" />
-    <option name="height" value="744" />
+    <option name="height" value="714" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -489,7 +476,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="24" width="1366" height="744" extended-state="6" />
+    <frame x="0" y="53" width="1366" height="714" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32901135" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -620,13 +607,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/admin.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/user/contact/maintaincontact.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="72" column="0" selection-start="4314" selection-end="4811" vertical-scroll-proportion="-3.6785715">
@@ -662,13 +642,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/check.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="74" column="40" selection-start="2502" selection-end="2502" vertical-scroll-proportion="30.535715">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/models/sms_model.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="75" column="22" selection-start="2344" selection-end="2344" vertical-scroll-proportion="-12.892858">
@@ -676,19 +649,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/user.php">
+    <entry file="file://$PROJECT_DIR$/application/views/check/output.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="288" column="27" selection-start="11889" selection-end="11889" vertical-scroll-proportion="45.392857">
+        <state line="22" column="40" selection-start="884" selection-end="884" vertical-scroll-proportion="-2.7142856">
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/admin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/check/output.php">
+    <entry file="file://$PROJECT_DIR$/application/controllers/check.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="46" selection-start="555" selection-end="555" vertical-scroll-proportion="0.54702497">
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
+        <state line="74" column="40" selection-start="2502" selection-end="2502" vertical-scroll-proportion="24.428572">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/user.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="73" column="17" selection-start="2734" selection-end="2734" vertical-scroll-proportion="0.45833334">
+          <folding />
         </state>
       </provider>
     </entry>
