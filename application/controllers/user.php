@@ -201,10 +201,14 @@ class User extends CI_Controller
     {
         $data = $this->input->post();
         if (!$data) {
+            $data = $this->contact_model->selectContactgroup($this->uid);
+            if ($data)
+                $this->data['contactgroup'] = $data;
             $this->load->view('user/header', $this->data);
             $this->load->view('user/contact/header', $this->data);
             $this->load->view('user/contact/maintaincontact', $this->data);
         } else {
+            $this->session->set_flashdata($data);
             switch ($type) {
                 case 'select':
                     $data = array_filter($data);
@@ -212,6 +216,9 @@ class User extends CI_Controller
                         redirect('user/maintaincontact');
                     else {
                         $result = $this->contact_model->selectContact($data, $this->uid, $page);
+                        $data = $this->contact_model->selectContactgroup($this->uid);
+                        if ($data)
+                            $this->data['contactgroup'] = $data;
                         if ($result) {
                             $result['contact'] = $result['result'];
                             $result['page'] = $page;
@@ -223,6 +230,32 @@ class User extends CI_Controller
                             redirect(base_url('user/maintaincontact'));
                         }
                     }
+                    break;
+                case 'del':
+                    $data = array_filter($data);
+                    if(count($data) != 0){
+                        foreach ($data['checkbox'] as $item) {
+                            $this->contact_model->delContact($item);
+                        }
+                        $this->session->set_flashdata('err', '删除成功');
+                    }
+                    else{
+                        $this->session->set_flashdata('err', '请选择一个要删除的联系人');
+                    }
+                    redirect(base_url('user/maintaincontact'));
+                    break;
+                case 'modify':
+                    $data = array_filter($data);
+                    if(count($data) != 0){
+                        foreach ($data['checkbox'] as $item) {
+                            $this->contact_model->modifyContactgroup($item, $data['cgid']);
+                        }
+                        $this->session->set_flashdata('err', '修改成功');
+                    }
+                    else{
+                        $this->session->set_flashdata('err', '请选择一个要修改组的联系人');
+                    }
+                    redirect(base_url('user/maintaincontact'));
                     break;
                 default:
                     redirect(base_url('user/maintaincontact'));
@@ -262,7 +295,7 @@ class User extends CI_Controller
             else{
                 $submit = array();
                 foreach($number as $item){
-                    if(preg_match("/^13[0-9]{1}[0-9]{8}$|15[0189]{1}[0-9]{8}$|189[0-9]{8}$/", $item)){
+                    if(preg_match("/^13[0-9]{1}[0-9]{8}$|15[0-9]{1}[0-9]{8}$|18[0-9]{9}$/", $item)){
                         ;
                     }else{
                         $this->session->set_flashdata('err', '输入信息错误,正则');
@@ -332,6 +365,19 @@ class User extends CI_Controller
                         $this->session->set_flashdata('err', '没有找到');
                         redirect('user/maintaincontactgroup');
                     }
+                    break;
+                case 'del':
+                    $data = array_filter($data);
+                    if(count($data) != 0){
+                        foreach ($data['checkbox'] as $item) {
+                            $this->contact_model->delContactgroup($item);
+                        }
+                        $this->session->set_flashdata('err', '删除成功');
+                    }
+                    else{
+                        $this->session->set_flashdata('err', '请选择一个要删除的联系人组');
+                    }
+                    redirect(base_url('user/maintaincontactgroup'));
                     break;
                 default:
                     redirect(base_url('user/maintaincontactgroup'));

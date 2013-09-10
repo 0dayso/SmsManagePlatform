@@ -1,5 +1,5 @@
 <div id="main">
-    <div id="leftside" style="height: 850px">
+    <div id="leftside" style="height: 750px">
         <ul>
             <li><a href="#">用户管理</a></li>
 
@@ -13,7 +13,7 @@
 
         </ul>
     </div>
-        <div id="rightside" style="heigh: 850px">
+        <div id="rightside" style="height: 750px">
             <p class="title-intro">用户管理&gt;&gt;待审核信息导出</p>
             <form action="<?=base_url('check/output')?>" method="post">
                 <table>
@@ -94,10 +94,6 @@
                             </tr>
                         <?php endforeach ?>
                     <?php endif ?>
-                    <tr>
-                        <td colspan="5">&nbsp;</td>
-                    </tr>
-
                 </table>
 
 

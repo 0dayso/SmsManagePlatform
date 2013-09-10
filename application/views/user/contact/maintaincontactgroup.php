@@ -1,7 +1,7 @@
 <div id="rightside">
     <p class="title-intro">联系人&gt;&gt;联系人组维护</p>
 
-    <form action="<?= base_url('user/maintaincontactgroup/select') ?>" method="post">
+    <form action="" method="post">
         <table>
             <tr>
                 <td width="200" class="blue">联系人组名</td>
@@ -13,12 +13,8 @@
             </tr>
             <tr>
                 <td colspan="4">
-                    <button type="submit" class="button-s">查询</button>
-                    <a href="#" class="button-s">新增</a>
-
-                    <a href="#" class="button-s">删除</a>
-
-                    <a href="#" class="button-s">发送</a>
+                    <button type="button" class="button-s" value="<?= base_url('user/maintaincontactgroup/select') ?>">查询</button>
+                    <button type="button" class="button-s" value="<?= base_url('user/maintaincontactgroup/del') ?>">删除</button>
                 </td>
             </tr>
         </table>
@@ -34,7 +30,7 @@
                     <a href="#" class="button-s">尾页</a></td>
             </tr>
             <tr>
-                <td width="98" class="blue"><input type="checkbox" name="checkbox" id="checkbox">
+                <td width="98" class="blue"><input type="checkbox" name="checkbox" id="checkAll">
                     <label for="checkbox">全选</label></td>
                 <td width="255" class="blue">联系人组名称</td>
                 <td width="318" class="blue">联系人组描述</td>
@@ -43,7 +39,7 @@
             <?php if (isset($contactgroup)): ?>
                 <?php foreach ($contactgroup as $item): ?>
                     <tr>
-                        <td width="98"><input type="checkbox" name="checkbox" id="checkbox"></td>
+                        <td width="98"><input type="checkbox" name="checkbox[]" id="checkbox" value="<?=$item['cgid']?>"></td>
                         <td width="255"><?= $item['cgname'] ?></td>
                         <td width="318"><?= $item['cginfo'] ?></td>
                         <td width="109">操作</td>
@@ -58,5 +54,20 @@
 </div>
 </div>
 </div>
+<script type="text/javascript">
+    $(function(){
+        $('.button-s').click(function(){
+            $("form").attr('action', $(this).val());
+            $("form").submit();
+        })
+        $("#checkAll").click(function () {
+            $('input[type="checkbox"]').attr("checked", this.checked);
+        });
+        var $subBox = $("input[type='checkbox']");
+        $subBox.click(function () {
+            $("#checkAll").attr("checked", $subBox.length == $("input[type='checkbox']:checked").length ? true : false);
+        });
+    })
+</script>
 </body>
 </html>

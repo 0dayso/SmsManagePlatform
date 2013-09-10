@@ -4,11 +4,16 @@
                 <table>
                     <tr>
                         <td width="200" class="blue">姓名</td>
-                        <td width="146"><input type="text" name="cname" id="textfield"></td>
+                        <td width="146"><input type="text" name="cname" id="textfield" value="<?=$this->session->flashdata('cname')?>"></td>
                         <td width="218" class="blue">联系人组</td>
                         <td width="218"><label for="select"></label>
                             <select name="cgroup" class="select1">
-                            </select>								  <label for="textfield2"></label></td>
+                                <option value="">不使用</option>
+                                <?php foreach($contactgroup as $item):?>
+                                    <option value="<?=$item['cgid']?>"><?=$item['cgname']?></option>
+                                <?php endforeach ?>
+                            </select>
+                        </td>
                     </tr>
                     <tr>
                         <td colspan="4" >
@@ -25,18 +30,18 @@
                     </tr>
                     <tr>
                         <td colspan="7"><span class="result">查询结果：共<span><?php if(isset($contact)) echo $numrow; else echo 0;?></span>条记录，当前<span>0/0</span>页</span>
-                            <button type="button" value="<?=base_url('user/maintaincontact/0')?>" class="button-s">首页</button>
+                            <button type="button" value="<?=base_url('user/maintaincontact/select/0')?>" class="button-s">首页</button>
                             <?php if(isset($page)):?>
                             <?php if($page != 0):?>
-                                <<button type="button" value="<?=base_url('user/maintaincontact/'.($page - 1))?>" class="button-s">上一页</button>
+                                <button type="button" value="<?=base_url('user/maintaincontact/select/'.($page - 1))?>" class="button-s">上一页</button>
                             <?php endif ?>
-                            <button type="button" value="<?=base_url('user/maintaincontact/'.($page + 1))?>" class="button-s">下一页</button>
+                            <button type="button" value="<?=base_url('user/maintaincontact/select/'.($page + 1))?>" class="button-s">下一页</button>
                             <?php endif ?>
-                            <button type="button" value="<?=base_url('user/maintaincontact/0')?>" class="button-s">尾页</button>
+                            <button type="button" value="<?=base_url('user/maintaincontact/select/0')?>" class="button-s">尾页</button>
                         </td>
                     </tr>
                     <tr>
-                        <td width="68" class="blue"><input type="checkbox" name="checkbox" id="checkbox">
+                        <td width="68" class="blue"><input type="checkbox" name="checkbox" id="checkAll">
                             <label for="checkbox">全选</label></td>
                         <td width="90" class="blue">联系人姓名</td>
                         <td width="179" class="blue">联系人号码</td>
@@ -49,7 +54,7 @@
                         <?php foreach($contact as $item):?>
                             <tr>
                             <td width="68">
-                                <input type="checkbox" name="checkbox" id="checkbox">
+                                <input type="checkbox" name="checkbox[]" id="checkbox" value="<?= $item['cid'] ?>">
                             </td>
                             <td width="90"><?=$item['cname']?></td>
                             <td width="179"><?=$item['cnumber']?></td>
@@ -71,6 +76,13 @@ $(function(){
         $("form").attr('action', $(this).val());
         $("form").submit();
     })
+    $("#checkAll").click(function () {
+        $('input[type="checkbox"]').attr("checked", this.checked);
+    });
+    var $subBox = $("input[type='checkbox']");
+    $subBox.click(function () {
+        $("#checkAll").attr("checked", $subBox.length == $("input[type='checkbox']:checked").length ? true : false);
+    });
 })
 </script>
 </body>

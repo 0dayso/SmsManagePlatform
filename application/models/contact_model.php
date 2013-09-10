@@ -30,12 +30,12 @@ class Contact_model extends CI_Model
         if(isset($data['cname']))
             $this->db->where('contact.cname', $data['cname']);
         if(isset($data['cgroup']))
-            $this->db->where('contactgroup.cgroup', $data['cgroup']);
+            $this->db->where('contactgroup.cgid', $data['cgroup']);
         if(isset($data['cgid']))
             $this->db->where('contact.cgid', $data['cgid']);
         $this->db->where('contact.uid', $uid);
-        if($page)
-            $this->db->limit(2, $page * 2);
+        if(isset($page))
+            $this->db->limit(5, $page * 5);
         $query = $this->db->get();
         if($query->num_rows()){
             $result['numrow'] = $query->num_rows();
@@ -68,5 +68,33 @@ class Contact_model extends CI_Model
         }
         else
             return FALSE;
+    }
+
+    public function delContact($cid)
+    {
+        $this->db->delete('contact',array(
+            'cid'=>$cid
+        ));
+        return TRUE;
+    }
+
+    public function delContactgroup($cgid)
+    {
+        $this->db->delete('contactgroup',array(
+            'cgid'=>$cgid
+        ));
+        $this->db->delete('contact', array(
+            'cgid'=>$cgid
+        ));
+        return TRUE;
+    }
+
+    public function modifyContactgroup($cid, $cgid)
+    {
+        $this->db->where('cid', $cid);
+        $this->db->update('contact', array(
+            'cgid'=>$cgid
+        ));
+        return TRUE;
     }
 }

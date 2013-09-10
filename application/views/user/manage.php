@@ -49,7 +49,7 @@
                             <?php foreach($user as $item):?>
                                 <tr>
                                 <td width="106">
-                                    <input type="checkbox" name="checkbox" id="checkbox">
+                                    <input type="checkbox" name="checkbox[]" id="checkbox">
                                 </td>
                                 <td width="169"><?=$item['usrname']?></td>
                                 <td width="254">无</td>

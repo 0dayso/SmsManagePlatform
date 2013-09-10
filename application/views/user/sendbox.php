@@ -33,7 +33,7 @@
                 </tr>
                 <tr>
                     <td class="blue">选择主叫号码</td>
-                    <td><input type="text" name="hostname" id="textfield3"></td>
+                    <td><input type="text" name="hostname" id="textfield3" disabled></td>
                     <td class="blue">选择被叫号码</td>
                     <td><input type="text" name="clientnumber" id="textfield4"
                                value="<?= $this->session->flashdata('clientnumber') ?>"></td>
@@ -97,7 +97,7 @@
                     <?php foreach ($result as $item): ?>
                         <tr>
                             <td width="70">
-                                <input type="checkbox" name="checkbox" id="checkbox">
+                                <input type="checkbox" name="checkbox[]" id="checkbox">
                             </td>
                             <td width="73"><?= $item['snumber'] ?></td>
                             <td width="93">主叫号码</td>

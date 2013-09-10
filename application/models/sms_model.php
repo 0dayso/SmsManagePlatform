@@ -62,6 +62,7 @@ class Sms_model extends CI_Model
 
     public function getUnchecksms($data, $page, $flag = null)
     {
+        $this->db->limit(5, $page * 5);
         if($flag)
             $query = $this->db->get('mtcontent');
         else
@@ -88,7 +89,6 @@ class Sms_model extends CI_Model
             }
             if(array_key_exists('flag', $data))
                 $this->db->where('flag', $data['gatetype']);
-            $this->db->limit(5, $page * 5);
             $query = $this->db->get();
             if($query->num_rows() == 0)
                 return $returndata;
