@@ -26,10 +26,12 @@
                     <tr>
                         <td colspan="7"><span class="result">查询结果：共<span><?php if(isset($contact)) echo $numrow; else echo 0;?></span>条记录，当前<span>0/0</span>页</span>
                             <button type="button" value="<?=base_url('user/maintaincontact/0')?>" class="button-s">首页</button>
+                            <?php if(isset($page)):?>
                             <?php if($page != 0):?>
                                 <<button type="button" value="<?=base_url('user/maintaincontact/'.($page - 1))?>" class="button-s">上一页</button>
                             <?php endif ?>
                             <button type="button" value="<?=base_url('user/maintaincontact/'.($page + 1))?>" class="button-s">下一页</button>
+                            <?php endif ?>
                             <button type="button" value="<?=base_url('user/maintaincontact/0')?>" class="button-s">尾页</button>
                         </td>
                     </tr>
@@ -58,10 +60,6 @@
                             </tr>
                         <?php endforeach ?>
                         <?php endif ?>
-                    <tr>
-                        <td colspan="7">&nbsp;</td>
-                    </tr>
-
                 </table>
             </form>
         </div>

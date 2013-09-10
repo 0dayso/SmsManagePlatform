@@ -246,14 +246,17 @@ class User extends CI_Controller
         }
         else{
             $this->load->helper('file');
-            $contactgroup = $data['contactgroup'];
-            $this->upload->do_upload();
+            $this->load->library('upload', $config);
+            if(!$this->upload->do_upload()){
+                var_dump($this->upload->display_errors());
+            }
+            $contactgroup = $data['cgid'];
             $path = $this->upload->data();
             $string = read_file('./uploads/' . $path['file_name']);
             $number = explode(',', $string);
             if(!$number){
-                $this->session->set_flashdata('err', '输入信息错误');
-                redirect('user/importcontactgroup');
+                $this->session->set_flashdata('err', '输入信息错误,number');
+                redirect('user/importcontact');
             }
             else{
                 $submit = array();
@@ -261,8 +264,8 @@ class User extends CI_Controller
                     if(preg_match("/^13[0-9]{1}[0-9]{8}$|15[0189]{1}[0-9]{8}$|189[0-9]{8}$/", $item)){
                         ;
                     }else{
-                        $this->session->set_flashdata('err', '输入信息错误');
-                        redirect('user/importcontactgroup');
+                        $this->session->set_flashdata('err', '输入信息错误,正则');
+                        redirect('user/importcontact');
                     }
                 }
                 $data['cmail'] = '导入的联系人';
@@ -274,7 +277,7 @@ class User extends CI_Controller
                     $this->contact_model->addContact($data);
                 }
                 $this->session->set_flashdata('err', '导入成功');
-                redirect('user/importcontactgroup');
+                redirect('user/importcontact');
             }
         }
     }

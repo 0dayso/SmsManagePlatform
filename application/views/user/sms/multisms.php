@@ -17,7 +17,7 @@
                     <td class="blue">短信内容</td>
                     <td>
                         <textarea style="width:600px;height: 80px" name="content" id="content" cols="30" rows="10"></textarea>
-                        <p>最多可输入<span class="number">70</span>字，已输入<span class="number">0</span>字，系统会按标准自动拆分<span class="number">0</span>条短信发送</p>
+                        <p>最多可输入<span class="number">70</span>字，已输入<span class="number" id="textnumber">0</span>字，系统会按标准自动拆分<span class="number">0</span>条短信发送</p>
                     </td>
                 </tr>
                 <tr>
@@ -74,7 +74,15 @@
                 document.location.reload();
             })
         });
+        $('#content').keydown(function(){
+            if($('#content').val().length+1 > 70){
+                alert('字数超过限制');
+                $('#content').val($('#content').val().slice(0, 70));
+            }
+            $('#textnumber').text($('#content').val().length+1);
+        })
     })
 </script>
+
 </body>
 </html>

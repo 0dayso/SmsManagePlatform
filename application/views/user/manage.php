@@ -38,7 +38,7 @@
                             <a href="#" class="button-s">下一页</a>
                             <a href="#" class="button-s">尾页</a></td>
                     </tr>						  <tr>
-                        <td width="106" class="blue"><input type="checkbox" name="checkbox" id="checkbox">
+                        <td width="106" class="blue"><input type="checkbox" name="checkbox" id="checkAll">
                             <label for="checkbox">全选</label></td>
                         <td width="169" class="blue">用户名</td>
                         <td width="254" class="blue">备注</td>
@@ -58,10 +58,6 @@
                                 </tr>
                             <?php endforeach ?>
                         <?php endif ?>
-                    <tr>
-                        <td colspan="5">&nbsp;</td>
-                    </tr>
-
                 </table>
             </form>
         </div>
@@ -73,6 +69,13 @@
             $("form").attr('action', $(this).val());
             $("form").submit();
         })
+        $("#checkAll").click(function() {
+            $('input[type="checkbox"]').attr("checked",this.checked);
+        });
+        var $subBox = $("input[type='checkbox']");
+        $subBox.click(function(){
+            $("#checkAll").attr("checked",$subBox.length == $("input[type='checkbox']:checked").length ? true : false);
+        });
     })
 </script>
 </body>

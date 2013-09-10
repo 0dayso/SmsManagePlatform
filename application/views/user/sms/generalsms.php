@@ -67,12 +67,12 @@
 </div>
 <script type="text/javascript">
     $(function(){
-        $('#content').keyup(function(){
-            if($('#content').val().length > 70){
+        $('#content').keydown(function(){
+            if($('#content').val().length+1 > 70){
                 alert('字数超过限制');
                 $('#content').val($('#content').val().slice(0, 70));
             }
-            $('#textnumber').text($('#content').val().length);
+            $('#textnumber').text($('#content').val().length+1);
         })
     })
 </script>

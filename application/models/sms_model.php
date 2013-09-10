@@ -254,6 +254,7 @@ class Sms_model extends CI_Model
         $this->db->update('mtcontent', array(
             'flag'=>$flag
         ));
+        $this->db->where('csid', $csid);
         $this->db->update('smsmt', array(
             'flag'=>$flag
         ));

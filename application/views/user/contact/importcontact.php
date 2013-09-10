@@ -5,7 +5,7 @@
                     <tr>
                         <td class="blue">选择文件</td>
                         <td>
-                            <input name="usefile" type="file" />
+                            <input name="userfile" type="file" />
                             <p><a href="#">模板下载</a></p>
                         </td>
                     </tr>
@@ -21,7 +21,7 @@
                     </tr>
                     <tr>
                         <td colspan="2" class="blue">
-                            <button type="submit">导入</button>
+                            <button type="submit" value="upload">导入</button>
                         </td>
                     </tr>
 
