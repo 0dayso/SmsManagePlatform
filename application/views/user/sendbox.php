@@ -1,5 +1,5 @@
 <div id="main">
-    <div id="leftside" style="height: 900px">
+    <div id="leftside" style="height: 950px">
         <ul>
             <li><a href="<?= base_url('user/generalsms') ?>">短信发送</a></li>
             <li><a href="<?= base_url('user/smsbox') ?>">收件箱</a></li>
@@ -13,7 +13,7 @@
             <li><a href="<?= base_url('user/manage') ?>">用户管理</a></li>
         </ul>
     </div>
-    <div id="rightside" style="height: 900px">
+    <div id="rightside" style="height: 950px">
         <p class="title-intro">
             短信发送>>已发送短信</p>
 
@@ -66,9 +66,12 @@
                     <td colspan="7" class="blue">&nbsp;</td>
                 </tr>
                 <tr>
-                    <td colspan="10">总数：<span class="number">0</span>&nbsp;&nbsp;待发送：<span class="number">0</span>&nbsp;&nbsp;已提交：<span
-                            class="number">0</span>&nbsp;&nbsp;发送成功：<span class="number">0</span>&nbsp;&nbsp;发送失败：<span
-                            class="number">0</span>&nbsp;&nbsp;
+                    <td colspan="10">
+                        <?php if(isset($analysis)):?>
+                            总数：<span class="number"><?=$analysis['total']?></span>&nbsp;&nbsp;待审批：<span class="number"><?=$analysis['waitforcheck']?></span>&nbsp;&nbsp;待发送：<span class="number"><?=$analysis['waitforsend']?></span>&nbsp;&nbsp;已提交：<span
+                                class="number"><?=$analysis['submit']?></span>&nbsp;&nbsp;发送成功：<span class="number"><?=$analysis['success']?></span>&nbsp;&nbsp;发送失败：<span
+                                class="number"><?=$analysis['failed']?></span>&nbsp;&nbsp;
+                        <?php endif ?>
                         <button type="button" value="<?= base_url('user/sendbox/select/0') ?>" class="button-s">首页
                         </button>
                         <?php if ($page != 0): ?>
@@ -104,7 +107,25 @@
                             <td width="290"><?= $item['content'] ?></td>
                             <td width="96">计划时间</td>
                             <td width="93"><?= $item['addtime'] ?></td>
-                            <td width="53"><?= $item['flag'] ?></td>
+                            <td width="53">
+                                <?php switch($item['flag']){
+                                    case 0:
+                                        echo "待审批";
+                                        break;
+                                    case 1:
+                                        echo "待发送";
+                                        break;
+                                    case 4:
+                                        echo "已提交";
+                                        break;
+                                    case 6:
+                                        echo "成功";
+                                        break;
+                                    case 7:
+                                        echo "失败";
+                                        break;
+                                } ?>
+                            </td>
                         </tr>
                     <?php endforeach ?>
                 <?php endif ?>

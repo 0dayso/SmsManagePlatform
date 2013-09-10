@@ -52,7 +52,7 @@ class Sms_model extends CI_Model
         if(array_key_exists('flag', $data))
             $this->db->where('smsmt.flag', $data['flag']);
         $this->db->order_by('smsmt.addtime', 'desc');
-        $this->db->limit(5, $page * 5);
+        $this->db->limit(8, $page * 8);
         $query = $this->db->get();
         if($query->num_rows())
             return $query->result_array();
@@ -60,9 +60,56 @@ class Sms_model extends CI_Model
             return FALSE;
     }
 
-    public function getUnchecksms($data, $page, $flag = null)
+    public function getTotal($uid, $data)
     {
-        $this->db->limit(5, $page * 5);
+        $this->db->select('*');
+        $this->db->from('smsmt, mtcontent');
+        $this->db->where('smsmt.csid = mtcontent.csid');
+        $this->db->where('smsmt.uid', $uid);
+        if(array_key_exists('startime', $data)){
+            $data['startime'] = human_to_unix($data['startime'].' 00:00 AM');
+            $this->db->where('UNIX_TIMESTAMP(smsmt.addtime) >=', $data['startime']);
+        }
+        if(array_key_exists('endtime', $data)){
+            $this->db->where('smsmt.addtime <=', $data['endtime']);
+        }
+        if(array_key_exists('clientnumber', $data))
+            $this->db->where('smsmt.snumber', $data['clientnumber']);
+        $this->db->order_by('smsmt.addtime', 'desc');
+        $query = $this->db->get();
+        $result = $query->result_array();
+        $data['total'] = $query->num_rows();
+        $data['waitforcheck'] = 0;
+        $data['waitforsend'] = 0;
+        $data['submit'] = 0;
+        $data['success'] = 0;
+        $data['failed'] = 0;
+        foreach($result as $item){
+            switch($item['flag']){
+                case 0:
+                    ++$data['waitforcheck'];
+                    break;
+                case 1:
+                    ++$data['waitforsend'];
+                    break;
+                case 4:
+                    ++$data['submit'];
+                    break;
+                case 6:
+                    ++$data['success'];
+                    break;
+                case 7:
+                    ++$data['failed'];
+                    break;
+            }
+        }
+        return $data;
+    }
+
+    public function getUnchecksms($data, $page, $flag = null, $analysis = null)
+    {
+        if(!$analysis)
+            $this->db->limit(5, $page * 5);
         if($flag)
             $query = $this->db->get('mtcontent');
         else

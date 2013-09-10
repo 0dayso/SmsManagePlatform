@@ -166,10 +166,12 @@ class User extends CI_Controller
                 case 'select':
                     $this->session->set_flashdata($data);
                     $data = array_filter($data);
+                    $analysis = $this->sms_model->getTotal($this->uid, $data);
                     $result = $this->sms_model->getHistorysms($this->uid, $data, $page);
                     if($result){
                         $result['result'] = $result;
                         $result['page'] = $page;
+                        $result['analysis'] = $analysis;
                         $this->load->view('user/header', $this->data);
                         $this->load->view('user/sendbox', $result);
                     }else{

@@ -80,7 +80,10 @@
                     <td colspan="6" class="blue">&nbsp;</td>
                 </tr>
                 <tr>
-                    <td colspan="6"><span class="result">查询结果：共<span>0</span>条记录，当前<span>0/0</span>页</span>
+                    <td colspan="6">
+                        <?php if(isset($total)):?>
+                            <span class="result">查询结果：共<span><?=$total?></span>条记录，当前<span><?=$page?>/<?=floor($total/5)?></span>页</span>
+                        <?php endif?>
                         <button type="button" value="<?= base_url('check/intercept/select/0') ?>" class="button-s">首页
                         </button>
                         <?php if ($page != 0): ?>

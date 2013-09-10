@@ -53,8 +53,10 @@ class Check extends CI_Controller
                     $this->session->set_flashdata($data);
                     $data = array_filter($data);
                     $result = $this->sms_model->getUnchecksms($data, $page);
+                    $totalresult = $this->sms_model->getUnchecksms($data, $page, null, TRUE);
                     $result['unchecksms'] = $result;
                     $result['page'] = $page;
+                    $result['total'] = count($totalresult);
                     $this->load->view('user/header', $this->data);
                     $this->load->view('check/intercept', $result);
                     break;
