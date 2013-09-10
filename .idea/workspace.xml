@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5a46698f-c7d7-43a4-bed3-994f8bad6106" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/user/phrases/managephrase.php" afterPath="$PROJECT_DIR$/application/views/user/phrases/managephrase.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/user/sms/multisms.php" afterPath="$PROJECT_DIR$/application/views/user/sms/multisms.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/user/sendbox.php" afterPath="$PROJECT_DIR$/application/views/user/sendbox.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/user.php" afterPath="$PROJECT_DIR$/application/controllers/user.php" />
     </list>
     <ignored path="sms.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -48,7 +45,7 @@
     <file path="/importcontact.php" changelist="5a46698f-c7d7-43a4-bed3-994f8bad6106" time="1378629180174" ignored="false" />
     <file path="/addphrase.php" changelist="5a46698f-c7d7-43a4-bed3-994f8bad6106" time="1378794670939" ignored="false" />
     <file path="/addphrasecategory.php" changelist="5a46698f-c7d7-43a4-bed3-994f8bad6106" time="1378794425906" ignored="false" />
-    <file path="/managephrase.php" changelist="5a46698f-c7d7-43a4-bed3-994f8bad6106" time="1378796760931" ignored="false" />
+    <file path="/managephrase.php" changelist="5a46698f-c7d7-43a4-bed3-994f8bad6106" time="1378802787283" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,10 +65,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="phrase_model.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="phrase_model.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/models/phrase_model.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="61" column="9" selection-start="1748" selection-end="1748" vertical-scroll-proportion="0.074906364">
+            <state line="69" column="23" selection-start="1903" selection-end="1903" vertical-scroll-proportion="-6.857143">
               <folding />
             </state>
           </provider>
@@ -122,15 +119,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="managephrase.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="managephrase.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/views/user/phrases/managephrase.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="48" column="109" selection-start="2520" selection-end="2520" vertical-scroll-proportion="-10.464286">
+            <state line="54" column="33" selection-start="2857" selection-end="2857" vertical-scroll-proportion="0.78119004">
               <folding>
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-                <marker date="1378796767290" expanded="true" signature="1306:1368" placeholder="..." />
-                <marker date="1378796767290" expanded="true" signature="1331:1368" placeholder="..." />
-                <marker date="1378796767290" expanded="true" signature="1448:1507" placeholder="..." />
+                <marker date="1378802791058" expanded="true" signature="1306:1368" placeholder="..." />
+                <marker date="1378802791058" expanded="true" signature="1331:1368" placeholder="..." />
+                <marker date="1378802791058" expanded="true" signature="1448:1507" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -139,7 +136,16 @@
       <file leaf-file-name="sendbox.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/user/sendbox.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="173" column="35" selection-start="8211" selection-end="8211" vertical-scroll-proportion="-11.535714">
+            <state line="126" column="36" selection-start="6696" selection-end="6696" vertical-scroll-proportion="-16.285715">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="uniquesms.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/check/uniquesms.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="93" column="26" selection-start="4489" selection-end="4489" vertical-scroll-proportion="-0.0">
               <folding />
             </state>
           </provider>
@@ -149,15 +155,6 @@
         <entry file="file://$PROJECT_DIR$/application/views/user/manage.php">
           <provider selected="true" editor-type-id="text-editor">
             <state line="1" column="41" selection-start="57" selection-end="57" vertical-scroll-proportion="39.75">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="addcontactgroup.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/user/contact/addcontactgroup.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="6" selection-start="1521" selection-end="1521" vertical-scroll-proportion="-13.392858">
               <folding />
             </state>
           </provider>
@@ -396,6 +393,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="check" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="models" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -574,13 +593,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/views/user/contact/maintaincontactgroup.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="24" selection-start="1098" selection-end="1098" vertical-scroll-proportion="-9.5">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/models/contact_model.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="5" selection-start="0" selection-end="2683" vertical-scroll-proportion="-8.821428">
@@ -639,13 +651,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/user/sendbox.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="173" column="35" selection-start="8211" selection-end="8211" vertical-scroll-proportion="-11.535714">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/user/manage.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1" column="41" selection-start="57" selection-end="57" vertical-scroll-proportion="39.75">
@@ -667,18 +672,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/user/phrases/managephrase.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="109" selection-start="2520" selection-end="2520" vertical-scroll-proportion="-10.464286">
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-            <marker date="1378796767290" expanded="true" signature="1306:1368" placeholder="..." />
-            <marker date="1378796767290" expanded="true" signature="1331:1368" placeholder="..." />
-            <marker date="1378796767290" expanded="true" signature="1448:1507" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/models/sms_model.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -695,8 +688,34 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/models/phrase_model.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="9" selection-start="1748" selection-end="1748" vertical-scroll-proportion="0.074906364">
+        <state line="69" column="23" selection-start="1903" selection-end="1903" vertical-scroll-proportion="-6.857143">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/user/sendbox.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="126" column="36" selection-start="6696" selection-end="6696" vertical-scroll-proportion="-16.285715">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/check/uniquesms.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="93" column="26" selection-start="4489" selection-end="4489" vertical-scroll-proportion="-0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/user/phrases/managephrase.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="54" column="33" selection-start="2857" selection-end="2857" vertical-scroll-proportion="0.78119004">
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <marker date="1378802791058" expanded="true" signature="1306:1368" placeholder="..." />
+            <marker date="1378802791058" expanded="true" signature="1331:1368" placeholder="..." />
+            <marker date="1378802791058" expanded="true" signature="1448:1507" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -46,11 +46,13 @@
                     </tr>
                     <?php if(isset($result)):?>
                         <?php foreach($result as $item):?>
+                            <tr>
                             <td width="106"><input type="checkbox" name="checkbox[]" value="<?=$item['pid']?>"></td>
                             <td width="139"><?=$item['pgname']?></td>
                             <td width="280"><?=$item['pcontent']?></td>
                             <td width="134"><?=$item['pinfo']?></td>
                             <td width="117">操作</td>
+                            </tr>
                         <?php endforeach ?>
                     <?php endif ?>
                 </table>
