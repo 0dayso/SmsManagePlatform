@@ -2,16 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5a46698f-c7d7-43a4-bed3-994f8bad6106" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/check/intercept.php" afterPath="$PROJECT_DIR$/application/views/check/intercept.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/views/user/sendbox.php" afterPath="$PROJECT_DIR$/application/views/user/sendbox.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/models/sms_model.php" afterPath="$PROJECT_DIR$/application/models/sms_model.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/user.php" afterPath="$PROJECT_DIR$/application/controllers/user.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="sms.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/start.php" changelist="5a46698f-c7d7-43a4-bed3-994f8bad6106" time="1378046941314" ignored="false" />
     <file path="/user_model.php" changelist="5a46698f-c7d7-43a4-bed3-994f8bad6106" time="1377954538819" ignored="false" />
     <file path="/config.php" changelist="5a46698f-c7d7-43a4-bed3-994f8bad6106" time="1377862126979" ignored="false" />
-    <file path="/user.php" changelist="5a46698f-c7d7-43a4-bed3-994f8bad6106" time="1378628812294" ignored="false" />
+    <file path="/user.php" changelist="5a46698f-c7d7-43a4-bed3-994f8bad6106" time="1378783675423" ignored="false" />
     <file path="/fee.php" changelist="5a46698f-c7d7-43a4-bed3-994f8bad6106" time="1377874572759" ignored="false" />
     <file path="/fee_model.php" changelist="5a46698f-c7d7-43a4-bed3-994f8bad6106" time="1377921998234" ignored="false" />
     <file path="/welcome.php" changelist="5a46698f-c7d7-43a4-bed3-994f8bad6106" time="1378113606976" ignored="false" />
@@ -76,10 +75,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sendbox.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="sendbox.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/user/sendbox.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="159" column="7" selection-start="7336" selection-end="7336" vertical-scroll-proportion="1.9846449">
+            <state line="152" column="28" selection-start="7011" selection-end="7011" vertical-scroll-proportion="-83.07143">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="smsbox.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/views/user/smsbox.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="user.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/controllers/user.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="88" column="26" selection-start="3633" selection-end="3633" vertical-scroll-proportion="1.3164794">
               <folding />
             </state>
           </provider>
@@ -141,24 +158,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="usermanage.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/admin/usermanage.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="adduser.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/views/admin/adduser.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindManager">
@@ -181,7 +180,6 @@
         <option value="$PROJECT_DIR$/system/libraries/Upload.php" />
         <option value="$PROJECT_DIR$/application/models/contact_model.php" />
         <option value="$PROJECT_DIR$/application/views/user/contact/importcontact.php" />
-        <option value="$PROJECT_DIR$/application/controllers/user.php" />
         <option value="$PROJECT_DIR$/application/views/user/sms/multisms.php" />
         <option value="$PROJECT_DIR$/application/views/user/sms/generalsms.php" />
         <option value="$PROJECT_DIR$/application/views/user/contact/addcontact.php" />
@@ -193,6 +191,7 @@
         <option value="$PROJECT_DIR$/application/models/sms_model.php" />
         <option value="$PROJECT_DIR$/application/views/check/intercept.php" />
         <option value="$PROJECT_DIR$/application/views/user/sendbox.php" />
+        <option value="$PROJECT_DIR$/application/controllers/user.php" />
       </list>
     </option>
   </component>
@@ -297,6 +296,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="user" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sms" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="user" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sms" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -514,16 +539,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/views/user/contact/maintaincontactgroup.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="23" selection-start="2248" selection-end="2248" vertical-scroll-proportion="-12.214286" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/views/user/manage.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="13" selection-start="3556" selection-end="3556" vertical-scroll-proportion="-7.75" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/check/fishsms.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="14" column="10" selection-start="508" selection-end="508" vertical-scroll-proportion="0.0" />
@@ -616,9 +631,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/user/smsbox.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/views/user/sendbox.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="159" column="7" selection-start="7336" selection-end="7336" vertical-scroll-proportion="1.9846449">
+        <state line="152" column="28" selection-start="7011" selection-end="7011" vertical-scroll-proportion="-83.07143">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/user.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="88" column="26" selection-start="3633" selection-end="3633" vertical-scroll-proportion="1.3164794">
           <folding />
         </state>
       </provider>

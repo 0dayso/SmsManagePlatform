@@ -67,15 +67,16 @@ class User extends CI_Controller
                 redirect(base_url('user/generalsms'));
             } else {
                 if($data['contact'] != 0){
-                    array_push($data['number'], $data['contact']);
+                    $data['number'] = $data['number'].','.$data['contact'];
                 }
                 if($data['contactgroup'] != 0){
                     $result = $this->contact_model->selectContact(array('cgid'=>$data['contactgroup']), $this->uid);
                     $result = $result['result'];
                     foreach($result as $item){
-                        array_push($data['number'], $item['cnumber']);
+                        $data['number'] = $data['number'].','.$item['cnumber'];
                     }
                 }
+                var_dump($data['number']);
                 $data['number'] = array_map(array($this, 'judgeISP'), explode(",", $data['number']));
                 if (in_array('err', $data['number'])) {
                     $this->session->set_flashdata('err', '号码非法');
